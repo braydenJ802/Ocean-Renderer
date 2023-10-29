@@ -1,9 +1,11 @@
 
 
 #ifndef OCEAN_GLOBALS_INCLUDED
-
+#define OCEAN_GLOBALS_INCLUDED
 
 #define OCEAN_PI 3.1415926535897932384626
+
+#include "OceanGradient.gdshaderinc"
 
 // submergence
 uniform sampler2D Ocean_CameraSubmergenceTexture;

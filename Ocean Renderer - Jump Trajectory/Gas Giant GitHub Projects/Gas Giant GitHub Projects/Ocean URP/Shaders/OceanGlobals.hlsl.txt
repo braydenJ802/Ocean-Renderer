@@ -1,4 +1,4 @@
-﻿#if !defined(OCEAN_GLOBALS_INCLUDED)
+#if !defined(OCEAN_GLOBALS_INCLUDED)
 #define OCEAN_GLOBALS_INCLUDED
 
 #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/EntityLighting.hlsl"
@@ -69,53 +69,53 @@ float Ocean_AbsorptionDepthScale;
 
 float3 SampleOceanSpecCube(float3 dir)
 {
-    float4 envSample = SAMPLE_TEXTURECUBE_LOD(Ocean_SpecCube, samplerOcean_SpecCube, dir, 0);
-    return DecodeHDREnvironment(envSample, Ocean_SpecCube_HDR);
+	float4 envSample = SAMPLE_TEXTURECUBE_LOD(Ocean_SpecCube, samplerOcean_SpecCube, dir, 0);
+	return DecodeHDREnvironment(envSample, Ocean_SpecCube_HDR);
 }
 
 float3 OceanEnvironmentDiffuse(float3 dir)
 {
-    float4 coefficients[7];
-    coefficients[0] = unity_SHAr;
-    coefficients[1] = unity_SHAg;
-    coefficients[2] = unity_SHAb;
-    coefficients[3] = unity_SHBr;
-    coefficients[4] = unity_SHBg;
-    coefficients[5] = unity_SHBb;
-    coefficients[6] = unity_SHC;
-    return max(0.0, SampleSH9(coefficients, dir));
+	float4 coefficients[7];
+	coefficients[0] = unity_SHAr;
+	coefficients[1] = unity_SHAg;
+	coefficients[2] = unity_SHAb;
+	coefficients[3] = unity_SHBr;
+	coefficients[4] = unity_SHBg;
+	coefficients[5] = unity_SHBb;
+	coefficients[6] = unity_SHC;
+	return max(0.0, SampleSH9(coefficients, dir));
 }
 
 float3 DeepScatterColor(float t)
 {
-    return Ocean_DeepScatterColor;
+	return Ocean_DeepScatterColor;
 }
 
 float3 SssColor(float t)
 {
-    return Ocean_SssColor;
+	return Ocean_SssColor;
 }
 
 float3 DiffuseColor(float t)
 {
-    return Ocean_DiffuseColor;
+	return Ocean_DiffuseColor;
 }
 
 float3 AbsorptionTint(float t)
 {
-    float4 colors[GRADIENT_MAX_KEYS] =
-    {
-        Ocean_AbsorptionColor0,
-        Ocean_AbsorptionColor1,
-        Ocean_AbsorptionColor2,
-        Ocean_AbsorptionColor3,
-        Ocean_AbsorptionColor4,
-        Ocean_AbsorptionColor5,
-        Ocean_AbsorptionColor6,
-        Ocean_AbsorptionColor7
-    };
-    Gradient g = CreateGradient(colors, Ocean_AbsorptionGradientParams);
-    return SampleGradient(g, t);
+	float4 colors[GRADIENT_MAX_KEYS] =
+	{
+		Ocean_AbsorptionColor0,
+		Ocean_AbsorptionColor1,
+		Ocean_AbsorptionColor2,
+		Ocean_AbsorptionColor3,
+		Ocean_AbsorptionColor4,
+		Ocean_AbsorptionColor5,
+		Ocean_AbsorptionColor6,
+		Ocean_AbsorptionColor7
+	};
+	Gradient g = CreateGradient(colors, Ocean_AbsorptionGradientParams);
+	return SampleGradient(g, t);
 }
 
 #endif

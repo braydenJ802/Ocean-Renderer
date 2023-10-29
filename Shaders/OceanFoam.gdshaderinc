@@ -2,9 +2,11 @@
 #ifndef OCEAN_FOAM_INCLUDED
 #define OCEAN_FOAM_INCLUDE
 
+#include "Additional Shaders/UPS/DeclareDepthTexture.gdshaderinc"
+
 #include "OceanGlobals.gdshaderinc"
 #include "OceanSimulationSampling.gdshaderinc"
-
+#include "OceanMaterialProps.gdshaderinc"
 
 struct FoamInput
 {
