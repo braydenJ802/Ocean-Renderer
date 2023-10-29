@@ -1,6 +1,8 @@
+res://Ocean Renderer - Jump Trajectory/Unity Pipeline Files/BSDF.hlsl.txt
 res://Scenes/main.tscn
 res://Shaders/Additional Shaders/UPS/DeclareDepthTexture.gdshaderinc
 res://Shaders/BrunetonLighting.gdshaderinc
+res://Shaders/OceanGradient.gdshaderinc
 res://Shaders/OceanGlobals.gdshaderinc
 res://Shaders/OceanMaterialProps.gdshaderinc
 res://Shaders/OceanVolume.gdshaderinc
@@ -9,9 +11,7 @@ res://Shaders/OceanFoam.gdshaderinc
 res://Shaders/OceanSurface.gdshader
 res://Shaders/GeoClipMap.gdshaderinc
 res://Shaders/OceanShoreMap.gdshaderinc
-res://Shaders/OceanGradient.gdshaderinc
 res://Shaders/Additional Shaders/UPS/Lighting.gdshaderinc
 res://Shaders/Additional Shaders/UPS/BRDF.gdshaderinc
 res://Shaders/Additional Shaders/UPS/SphericalHarmonics.gdshaderinc
-res://README.md
-res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/Shaders/OceanGlobals.hlsl.txt
+res://Shaders/Additional Shaders/UPS/BSDF.gdshaderinc

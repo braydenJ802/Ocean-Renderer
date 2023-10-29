@@ -3,7 +3,7 @@
 #ifndef UNIVERSAL_BRDF_INCLUDED
 #define UNIVERSAL_BRDF_INCLUDED
 
-//#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/BSDF.hlsl"
+#include "res://Shaders/Additional Shaders/UPS/BSDF.gdshaderinc"
 //#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/CommonMaterial.hlsl"
 //#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Deprecated.hlsl"
 //#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/SurfaceData.hlsl"

@@ -1,9 +1,9 @@
 #ifndef GEO_CLIP_MAP_INCLUDED
 #define GEO_CLIP_MAP_INCLUDED
 
-uniform float ClipMap_Scale;
-uniform float ClipMap_LevelHalfSize;
-uniform vec3 ClipMap_ViewerPosition;
+uniform float ClipMap_Scale = 1.0;
+uniform float ClipMap_LevelHalfSize = .5;
+uniform vec3 ClipMap_ViewerPosition = vec3(0.0);
 
 float ModifiedManhattanDistance(vec3 a, vec3 b)
 {
