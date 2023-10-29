@@ -1,0 +1,122 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1698544169
+icon.svg::CompressedTexture2D::8667936458424151213::1698531178::1698531194::1::::<><>::
+OceanGradient.gdshader::Shader::-1::1698544288::0::1::::<><>::
+::res://Ocean Renderer - Jump Trajectory/::1698531596
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/::1698531551
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/::1698531553
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/FFT Ocean/::1698531553
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/FFT Ocean/Compute Shaders/::1698531553
+FastFourierTransform.compute.txt::TextFile::-1::0::0::1::::<><>::
+InitialSpectrum.compute.txt::TextFile::-1::0::0::1::::<><>::
+TimeDependentSpectrum.compute.txt::TextFile::-1::0::0::1::::<><>::
+WavesTexturesMerger.compute (1).txt::TextFile::-1::0::0::1::::<><>::
+WavesTexturesMerger.compute.txt::TextFile::-1::0::0::1::::<><>::
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/FFT Ocean/Scripts/::1698531553
+FastFourierTransform.cs.txt::TextFile::-1::1698531553::0::1::::<><>::
+OceanGeometry.cs.txt::TextFile::-1::1698531553::0::1::::<><>::
+SimpleCameraController.cs.txt::TextFile::-1::0::0::1::::<><>::
+WavesCascade.cs.txt::TextFile::-1::1698531553::0::1::::<><>::
+WavesGenerator.cs.txt::TextFile::-1::1698531553::0::1::::<><>::
+WavesSettings.cs.txt::TextFile::-1::1698531553::0::1::::<><>::
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/FFT Ocean/Shaders/::1698531553
+Ocean.shader.txt::TextFile::-1::1698531553::0::1::::<><>::
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/::1698531552
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/External Scripts/::1698531552
+GradientTexture.cs.txt::TextFile::-1::0::0::1::::<><>::
+PlanarReflections.cs.txt::TextFile::-1::0::0::1::::<><>::
+PlanarReflectionsBoatAttack.cs.txt::TextFile::-1::0::0::1::::<><>::
+SimpleCameraController.cs.txt::TextFile::-1::0::0::1::::<><>::
+TextureFromShader.cs.txt::TextFile::-1::0::0::1::::<><>::
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/Runtime/::1698531552
+ClipmapMeshBuilder.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+ComputeFFT.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+EqualizerPreset.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+FoamParams.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+FoamVariablesController.cs.txt::TextFile::-1::0::0::1::::<><>::
+GlobalShaderVariables.cs.txt::TextFile::-1::0::0::1::::<><>::
+LocalWavesPreset.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+MaterialProps.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanColorsPreset.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanRenderer.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanRendererFeature.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanRenderingPasses.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanSimulation.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanSimulationInputs.cs.txt::TextFile::-1::0::0::1::::<><>::
+OceanSimulationInputsProvider.cs.txt::TextFile::-1::0::0::1::::<><>::
+OceanSimulationSettings.cs.txt::TextFile::-1::0::0::1::::<><>::
+RenderingUtils.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+ShoreMap.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+SpectrumParams.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+SwellPreset.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/Shaders/::1698533098
+BrunetonLighting.hlsl.txt::TextFile::-1::1698531552::0::1::::<><>::
+GeoClipMap.hlsl.txt::TextFile::-1::1698531552::0::1::::<><>::
+Ocean.shader.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanDepthOnlyPass.hlsl.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanFoam.hlsl.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanGlobals.hlsl.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanGradient.hlsl.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanMaterialProps.hlsl.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanShoreMap.hlsl.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanSimulationSampling.hlsl.txt::TextFile::-1::0::0::1::::<><>::
+OceanSurface.hlsl.txt::TextFile::-1::1698531552::0::1::::<><>::
+OceanVolume.hlsl.txt::TextFile::-1::1698531552::0::1::::<><>::
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/Shaders/Additional Shaders/::1698531553
+FullscreenVert.hlsl.txt::TextFile::-1::0::0::1::::<><>::
+StereographicSky.shader.txt::TextFile::-1::0::0::1::::<><>::
+UnderwaterEffect.shader.txt::TextFile::-1::0::0::1::::<><>::
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/Textures/::1698544160
+ContactFoam.png::CompressedTexture2D::1654195192881289515::1698531551::1698544160::1::::<><>::
+ContactFoam_1.png::CompressedTexture2D::6449327234230921620::1698531551::1698544160::1::::<><>::
+FoamAlbedo.png::CompressedTexture2D::2926588485776222250::1698531551::1698544160::1::::<><>::
+FoamNoise.png::CompressedTexture2D::9205088176363386710::1698531551::1698544160::1::::<><>::
+FoamTrail.png::CompressedTexture2D::9167511916119077402::1698531551::1698544160::1::::<><>::
+UnderwaterFoam.png::CompressedTexture2D::1276433454361710548::1698531551::1698544160::1::::<><>::
+wind_gusts.png::CompressedTexture2D::986195577963540000::1698531551::1698544160::1::::<><>::
+::res://Ocean Renderer - Jump Trajectory/Godot Files/::1698531560
+::res://Ocean Renderer - Jump Trajectory/Godot Files/Godot Files/::1698531560
+::res://Ocean Renderer - Jump Trajectory/Godot Files/Godot Files/Converted Gas Giant Projects/::1698531560
+::res://Ocean Renderer - Jump Trajectory/Godot Files/Godot Files/Converted Gas Giant Projects/Ocean Renderer 1.0/::1698531364
+::res://Ocean Renderer - Jump Trajectory/Godot Files/Godot Files/Converted Gas Giant Projects/Ocean Renderer 2.0/::1698531560
+::res://Ocean Renderer - Jump Trajectory/Godot Files/Godot Files/Converted Gas Giant Projects/Ocean Renderer 2.0/External Scripts/::1698531364
+::res://Ocean Renderer - Jump Trajectory/Godot Files/Godot Files/Converted Gas Giant Projects/Ocean Renderer 2.0/Runtime/::1698531364
+::res://Ocean Renderer - Jump Trajectory/Godot Files/Godot Files/Converted Gas Giant Projects/Ocean Renderer 2.0/Shaders/::1698531560
+BrunetonLighting_Godot.txt::TextFile::-1::0::0::1::::<><>::
+GeoClipMap_Godot.txt::TextFile::-1::0::0::1::::<><>::
+OceanFoam_Godot.txt::TextFile::-1::0::0::1::::<><>::
+OceanGlobals_Godot.txt::TextFile::-1::0::0::1::::<><>::
+OceanGradient_Godot.txt::TextFile::-1::0::0::1::::<><>::
+OceanMaterialProps_Godot.txt::TextFile::-1::0::0::1::::<><>::
+OceanShoreMap_Godot.txt::TextFile::-1::0::0::1::::<><>::
+OceanSimulationSampling_Godot.txt::TextFile::-1::0::0::1::::<><>::
+OceanSurface_Godot.txt::TextFile::-1::0::0::1::::<><>::
+OceanVolume_Godot.txt::TextFile::-1::0::0::1::::<><>::
+::res://Ocean Renderer - Jump Trajectory/Godot Files/Godot Files/Converted Gas Giant Projects/Ocean Renderer 2.0/Textures/::1698531364
+::res://Scenes/::1698544169
+main.tscn::PackedScene::1068344028316138845::1698544288::0::1::::<><>::
+::res://Scenes/Example Scenes/::1698531917
+::res://Scripts/::1698531786
+::res://Scripts/External Scripts/::1698531773
+::res://Scripts/Runtime/::1698531786
+::res://Shaders/::1698544169
+OceanGradient.gdshader.txt::TextFile::-1::1698542153::0::1::::<><>::
+OceanMaterialProps.gdshader.txt::TextFile::-1::1698531560::0::1::::<><>::
+OceanShoreMap.gdshader.txt::TextFile::-1::1698531560::0::1::::<><>::
+OceanSimulationSampling.gdshader.txt::TextFile::-1::1698531560::0::1::::<><>::
+OceanSurface.gdshader.txt::TextFile::-1::1698531560::0::1::::<><>::
+OceanVolume.gdshader.txt::TextFile::-1::1698531560::0::1::::<><>::
+BrunetonLighting.gdshader::Shader::-1::1698544288::0::1::::<><>::
+GeoClipMap.gdshader::Shader::-1::1698544288::0::1::::<><>::
+OceanFoam.gdshader::Shader::-1::1698544288::0::1::::<><>::
+OceanGlobals.gdshader::Shader::-1::1698544288::0::1::::<><>::
+::res://Shaders/Additional Shaders/::1698531891
+::res://Shaders/Additional Shaders/Compute Shaders/::1698531891
+::res://Textures for Shaders/::1698532051
+ContactFoam.png::CompressedTexture2D::5923264041787618559::1698532050::1698532051::1::::<><>::
+ContactFoam_1.png::CompressedTexture2D::6442815384581217187::1698532050::1698532051::1::::<><>::
+FoamAlbedo.png::CompressedTexture2D::5033306683258284447::1698532050::1698532051::1::::<><>::
+FoamNoise.png::CompressedTexture2D::622362520983921591::1698532050::1698532051::1::::<><>::
+FoamTrail.png::CompressedTexture2D::8002446882652938609::1698532051::1698532051::1::::<><>::
+UnderwaterFoam.png::CompressedTexture2D::245527830008183307::1698532051::1698532051::1::::<><>::
+wind_gusts.png::CompressedTexture2D::5914647885339512558::1698532051::1698532051::1::::<><>::

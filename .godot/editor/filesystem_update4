@@ -1,0 +1,12 @@
+res://Shaders/BrunetonLighting.gdshader.txt
+res://Shaders/BrunetonLighting.gdshader
+res://Shaders/GeoClipMap.gdshader.txt
+res://Shaders/GeoClipMap.gdshader
+res://Shaders/OceanFoam.gdshader.txt
+res://Shaders/OceanFoam.gdshader
+res://Scenes/main.tscn
+res://Shaders/OceanGlobals.gdshader
+res://Shaders/OceanGlobals.gdshader.txt
+res://OceanGradient.gdshader
+res://Shaders/OceanGradient.gdshader.txt
+res://Shaders/OceanGradient.gdshader

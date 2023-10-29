@@ -1,0 +1,123 @@
+shader_type spatial;
+
+
+
+
+
+
+#define OCEAN_PI 3.1415926
+
+// submergence
+uniform sampler2D Ocean_CameraSubmergenceTexture;
+SAMPLER(samplerOcean_CameraSubmergenceTexture;
+float Ocean_ElevationBelowCamera;
+
+// simulation
+float Ocean_WindSpeed;
+float Ocean_WavesScale;
+float Ocean_WavesAlignement;
+vec2 Ocean_WindDirection;
+mat4 Ocean_WorldToWindSpace;
+float Ocean_ReferenceWaveHeight;
+
+// foam
+float Ocean_FoamCoverage;
+float Ocean_FoamDensity;
+float Ocean_FoamSharpness;
+float Ocean_FoamPersistence;
+float Ocean_FoamTrail;
+float Ocean_FoamTrailTextureStrength;
+float Ocean_FoamUnderwater;
+vec4 Ocean_FoamCascadesWeights;
+vec2 Ocean_FoamTrailTextureSize0;
+vec2 Ocean_FoamTrailTextureSize1;
+vec2 Ocean_FoamTrailDirection0;
+vec2 Ocean_FoamTrailDirection1;
+float Ocean_FoamTrailBlendValue;
+
+// camera
+mat4 Ocean_InverseViewMatrix;
+mat4 Ocean_InverseProjectionMatrix;
+
+// environment maps
+TEXTURECUBE(Ocean_SpecCube;
+SAMPLER(samplerOcean_SpecCube;
+vec4 Ocean_SpecCube_HDR;
+uniform sampler2D Ocean_SkyMap;
+SAMPLER(samplerOcean_SkyMap;
+// reflections mask
+vec4 Ocean_ReflectionsMaskColor;
+float Ocean_ReflectionsMaskRadius;
+float Ocean_ReflectionsMaskSharpness;
+
+// colors
+vec3 Ocean_DeepScatterColor;
+vec3 Ocean_SssColor;
+vec3 Ocean_DiffuseColor;
+
+vec4 Ocean_AbsorptionColor0;
+vec4 Ocean_AbsorptionColor1;
+vec4 Ocean_AbsorptionColor2;
+vec4 Ocean_AbsorptionColor3;
+vec4 Ocean_AbsorptionColor4;
+vec4 Ocean_AbsorptionColor5;
+vec4 Ocean_AbsorptionColor6;
+vec4 Ocean_AbsorptionColor7;
+vec2 Ocean_AbsorptionGradientParams;
+
+float Ocean_FogDensity;
+float Ocean_AbsorptionDepthScale;
+
+
+vec3 SampleOceanSpecCube(vec3 dir)
+{
+    vec4 envSample = SAMPLE_TEXTURECUBE_LOD(Ocean_SpecCube, samplerOcean_SpecCube, dir, 0;
+    return DecodeHDREnvironment(envSample, Ocean_SpecCube_HDR;
+}
+
+vec3 OceanEnvironmentDiffuse(vec3 dir)
+{
+    vec4 coefficients[7];
+    coefficients[0] = unity_SHAr;
+    coefficients[1] = unity_SHAg;
+    coefficients[2] = unity_SHAb;
+    coefficients[3] = unity_SHBr;
+    coefficients[4] = unity_SHBg;
+    coefficients[5] = unity_SHBb;
+    coefficients[6] = unity_SHC;
+    return max(0.0, SampleSH9(coefficients, dir);
+}
+
+vec3 DeepScatterColor(float t)
+{
+    return Ocean_DeepScatterColor;
+}
+
+vec3 SssColor(float t)
+{
+    return Ocean_SssColor;
+}
+
+vec3 DiffuseColor(float t)
+{
+    return Ocean_DiffuseColor;
+}
+
+vec3 AbsorptionTint(float t)
+{
+    vec4 colors[GRADIENT_MAX_KEYS] =
+    {
+        Ocean_AbsorptionColor0,
+        Ocean_AbsorptionColor1,
+        Ocean_AbsorptionColor2,
+        Ocean_AbsorptionColor3,
+        Ocean_AbsorptionColor4,
+        Ocean_AbsorptionColor5,
+        Ocean_AbsorptionColor6,
+        Ocean_AbsorptionColor7
+    };
+    Gradient g = CreateGradient(colors, Ocean_AbsorptionGradientParams;
+    return SampleGradient(g, t;
+}
+
+#endif
