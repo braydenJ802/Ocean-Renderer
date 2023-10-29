@@ -15,3 +15,6 @@ res://Shaders/Additional Shaders/UPS/Lighting.gdshaderinc
 res://Shaders/Additional Shaders/UPS/BRDF.gdshaderinc
 res://Shaders/Additional Shaders/UPS/SphericalHarmonics.gdshaderinc
 res://Shaders/Additional Shaders/UPS/BSDF.gdshaderinc
+res://Ocean Renderer - Jump Trajectory/Unity Pipeline Files/CommonMaterials.hlsl.txt
+res://Shaders/Additional Shaders/UPS/CommonMaterial.gdshaderinc
+res://Shaders/Additional Shaders/MathExtensions.gdshaderinc

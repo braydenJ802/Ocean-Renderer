@@ -1,6 +1,8 @@
 #ifndef UNITY_BSDF_INCLUDED
 #define UNITY_BSDF_INCLUDED
 
+#include "res://Shaders/Additional Shaders/MathExtensions.gdshaderinc"
+
 // Note: All NDF and diffuse term have a version with and without divide by PI.
 // Version with divide by PI are use for direct lighting.
 // Version without divide by PI are use for image based lighting where often the PI cancel during importance sampling
@@ -23,37 +25,12 @@ struct CBSDF
 // Fresnel term
 //-----------------------------------------------------------------------------
 
-const float INV_PI = 0.31830988618;
-const float FLT_MIN = 1e-6;
 
 const mat3 XYZ_2_REC709_MAT = mat3(
     vec3(3.2404542, -1.5371385, -0.4985314),
     vec3(-0.9692660, 1.8760108, 0.0415560),
     vec3(0.0556434, -0.2040259, 1.0572252)
 );
-
-float sq(float x) {
-    return x * x;
-}
-
-float dotsq(vec3 y) {
-	return dot(y,y);
-}
-
-vec2 v2sq(vec2 x) {
-	return vec2(sq(x[0]),sq(x[1]));
-}
-
-vec3 v3sq(vec3 x) {
-	return vec3(sq(x[0]),sq(x[1]),sq(x[2]));
-}
-
-float SafeDiv(float numerator, float denominator) {
-    if (abs(denominator) < 0.00001) {
-        return 0.0;
-    }
-    return numerator / denominator;
-}
 
 float F_Schlick_f2(float f0, float f90, float u)
 {

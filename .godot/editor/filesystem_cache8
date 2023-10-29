@@ -101,36 +101,40 @@ OceanVolume_Godot.txt::TextFile::-1::1698531560::0::1::::<><>::
 ::res://Ocean Renderer - Jump Trajectory/Godot Files/Godot Files/Converted Gas Giant Projects/Ocean Renderer 2.0/Shaders/Additional Shaders/::1698531560
 ::res://Ocean Renderer - Jump Trajectory/Godot Files/Godot Files/Converted Gas Giant Projects/Ocean Renderer 2.0/Shaders/Additional Shaders/Compute Shaders/::1698531364
 ::res://Ocean Renderer - Jump Trajectory/Godot Files/Godot Files/Converted Gas Giant Projects/Ocean Renderer 2.0/Textures/::1698531364
-::res://Ocean Renderer - Jump Trajectory/Unity Pipeline Files/::1698565175
+::res://Ocean Renderer - Jump Trajectory/Unity Pipeline Files/::1698604704
 BRDF.hlsl.txt::TextFile::-1::1698562712::0::1::::<><>::
+BSDF.hlsl.txt::TextFile::-1::1698594760::0::1::::<><>::
+CommonMaterials.hlsl.txt::TextFile::-1::1698604704::0::1::::<><>::
 DeclareDepthTexture.hlsl.txt::TextFile::-1::1698562252::0::1::::<><>::
 Lighting.hlsl.txt::TextFile::-1::1698562260::0::1::::<><>::
 SphericalHarmonics.hlsl.txt::TextFile::-1::1698565175::0::1::::<><>::
-::res://Scenes/::1698567913
-main.tscn::PackedScene::1068344028316138845::1698567913::0::1::::<><>::
+::res://Scenes/::1698604239
+main.tscn::PackedScene::1068344028316138845::1698604239::0::1::::<><>::
 ::res://Scenes/Example Scenes/::1698531917
 ::res://Scripts/::1698531786
 ::res://Scripts/External Scripts/::1698531773
 ::res://Scripts/Runtime/::1698531786
-::res://Shaders/::1698568107
-BrunetonLighting.gdshaderinc::ShaderInclude::-1::1698568107::0::1::::<><>::
-GeoClipMap.gdshaderinc::ShaderInclude::-1::1698568107::0::1::::<><>::
-OceanFoam.gdshaderinc::ShaderInclude::-1::1698568107::0::1::::<><>::
-OceanGlobals.gdshaderinc::ShaderInclude::-1::1698568107::0::1::::<><>::
-OceanGradient.gdshaderinc::ShaderInclude::-1::1698568107::0::1::::<><>::
-OceanMaterialProps.gdshaderinc::ShaderInclude::-1::1698568107::0::1::::<><>::
+::res://Shaders/::1698604239
+BrunetonLighting.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
+GeoClipMap.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
+OceanFoam.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
+OceanGlobals.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
+OceanGradient.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
+OceanMaterialProps.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
 OceanShaderLib.gdshaderinc::ShaderInclude::-1::1698559137::0::1::::<><>::
-OceanShoreMap.gdshaderinc::ShaderInclude::-1::1698568107::0::1::::<><>::
-OceanSimulationSampling.gdshaderinc::ShaderInclude::-1::1698568107::0::1::::<><>::
-OceanSurface.gdshader::Shader::-1::1698568107::0::1::::<><>::
-OceanVolume.gdshaderinc::ShaderInclude::-1::1698568107::0::1::::<><>::
+OceanShoreMap.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
+OceanSimulationSampling.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
+OceanSurface.gdshader::Shader::-1::1698604239::0::1::::<><>::
+OceanVolume.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
 ::res://Shaders/Additional Shaders/::1698561852
 ::res://Shaders/Additional Shaders/Compute Shaders/::1698531891
-::res://Shaders/Additional Shaders/UPS/::1698568107
-BRDF.gdshaderinc::ShaderInclude::-1::1698568107::0::1::::<><>::
-DeclareDepthTexture.gdshaderinc::ShaderInclude::-1::1698568107::0::1::::<><>::
-Lighting.gdshaderinc::ShaderInclude::-1::1698568107::0::1::::<><>::
-SphericalHarmonics.gdshaderinc::ShaderInclude::-1::1698568107::0::1::::<><>::
+::res://Shaders/Additional Shaders/UPS/::1698604856
+BRDF.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
+DeclareDepthTexture.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
+Lighting.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
+BSDF.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
+CommonMaterial.gdshaderinc::ShaderInclude::-1::1698604856::0::1::::<><>::
+SphericalHarmonics.gdshaderinc::ShaderInclude::-1::1698604239::0::1::::<><>::
 ::res://Textures for Shaders/::1698532051
 ContactFoam.png::CompressedTexture2D::5923264041787618559::1698532050::1698532051::1::::<><>::
 ContactFoam_1.png::CompressedTexture2D::6442815384581217187::1698532050::1698532051::1::::<><>::
