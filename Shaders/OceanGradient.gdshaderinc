@@ -1,8 +1,8 @@
-shader_type spatial;
 
 #ifndef OCEAN_GRADIENT_INCLUDED
+#define OCEAN_GRADIENT_INCLUDED
 
-#define GRADIENT_MAX_KEYS 8
+const int GRADIENT_MAX_KEYS = 8;
 
 struct Gradient
 {

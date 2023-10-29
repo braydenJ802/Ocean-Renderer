@@ -1,4 +1,3 @@
-shader_type spatial;
 
 /**
  * Real-time Realistic Ocean Lighting using Seamless Transitions from Geometry to BRDF

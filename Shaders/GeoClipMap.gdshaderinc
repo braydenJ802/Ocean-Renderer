@@ -1,6 +1,5 @@
-shader_type spatial;
-
-
+#ifndef GEO_CLIP_MAP_INCLUDED
+#define GEO_CLIP_MAP_INCLUDED
 
 uniform float ClipMap_Scale;
 uniform float ClipMap_LevelHalfSize;
@@ -30,3 +29,4 @@ vec3 ClipMapVertex(vec3 positionOS, vec2 uv)
 	worldPos += morphOffset * meshScale * t;
 	return worldPos;
 }
+#endif

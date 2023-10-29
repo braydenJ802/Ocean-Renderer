@@ -1,4 +1,4 @@
-﻿#if !defined(OCEAN_SIMULATION_SAMPLING_INCLUDED)
+#if !defined(OCEAN_SIMULATION_SAMPLING_INCLUDED)
 #define OCEAN_SIMULATION_SAMPLING_INCLUDED
 
 #if defined(OCEAN_FOUR_CASCADES)
@@ -116,7 +116,7 @@ float3 NormalFromDerivatives(float4x4 derivativesCascades, float4 weights)
 		+ derivativesCascades[2] * weights[2]
 		+ derivativesCascades[3] * weights[3];
 	float2 slope = float2(derivatives.x / max(0.001, 1 + derivatives.z),
-                    derivatives.y / max(0.001, 1 + derivatives.w));
+					derivatives.y / max(0.001, 1 + derivatives.w));
 	
 	return normalize(float3(-slope.x, 1, -slope.y));
 }

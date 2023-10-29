@@ -1,8 +1,7 @@
-shader_type spatial;
+#ifndef OCEAN_VOLUME_INCLUDED
+#define OCEAN_VOLUME_INCLUDED
 
-
-
-
+#include "OceanGlobals.gdshaderinc"
 
 vec3 ColorThroughWater(vec3 color, vec3 volumeColor, float distThroughWater, float depth)
 {

@@ -1,6 +1,10 @@
-shader_type spatial;
 
-#ifdef GEO_CLIP_MAP_INCLUDED
+#ifndef OCEAN_FOAM_INCLUDED
+#define OCEAN_FOAM_INCLUDE
+
+#include "OceanGlobals.gdshaderinc"
+#include "OceanSimulationSampling.gdshaderinc"
+
 
 struct FoamInput
 {

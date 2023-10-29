@@ -1,4 +1,4 @@
-shader_type spatial;
+
 
 #ifndef OCEAN_GLOBALS_INCLUDED
 
@@ -37,11 +37,10 @@ uniform mat4 Ocean_InverseViewMatrix = mat4(1.0);
 uniform mat4 Ocean_InverseProjectionMatrix = mat4(1.0);
 
 // environment maps
-//TEXTURECUBE(Ocean_SpecCube);
-//SAMPLER(samplerOcean_SpecCube);
+uniform samplerCube Ocean_SpecCube : hint_default_black;
 uniform vec4 Ocean_SpecCube_HDR = vec4(1.0);
 uniform sampler2D Ocean_SkyMap;
-//SAMPLER(samplerOcean_SkyMap;
+
 // reflections mask
 uniform vec4 Ocean_ReflectionsMaskColor = vec4(0.0);
 uniform float Ocean_ReflectionsMaskRadius = 0.0;
@@ -65,23 +64,27 @@ uniform vec2 Ocean_AbsorptionGradientParams = vec2(0.0);
 uniform float Ocean_FogDensity = 0.0;
 uniform float Ocean_AbsorptionDepthScale = 0.0;
 
+vec3 DecodeHDREnvironment(vec4 color, vec4 hdrFactor) {
+    // Assuming hdrFactor contains scaling factors for each color channel
+    return color.rgb * hdrFactor.rgb;
+}
 
 vec3 SampleOceanSpecCube(vec3 dir)
 {
-    vec4 envSample = SAMPLE_TEXTURECUBE_LOD(Ocean_SpecCube, samplerOcean_SpecCube, dir, 0;
-    return DecodeHDREnvironment(envSample, Ocean_SpecCube_HDR;
+    vec4 envSample = textureLod(Ocean_SpecCube, dir, 0.0);
+    return DecodeHDREnvironment(envSample, Ocean_SpecCube_HDR);
 }
 
 vec3 OceanEnvironmentDiffuse(vec3 dir)
 {
     vec4 coefficients[7];
-    coefficients[0] = unity_SHAr;
-    coefficients[1] = unity_SHAg;
-    coefficients[2] = unity_SHAb;
-    coefficients[3] = unity_SHBr;
-    coefficients[4] = unity_SHBg;
-    coefficients[5] = unity_SHBb;
-    coefficients[6] = unity_SHC;
+    coefficients[0] = SHAr;
+    coefficients[1] = SHAg;
+    coefficients[2] = SHAb;
+    coefficients[3] = SHBr;
+    coefficients[4] = SHBg;
+    coefficients[5] = SHBb;
+    coefficients[6] = SHC;
     return max(0.0, SampleSH9(coefficients, dir);
 }
 

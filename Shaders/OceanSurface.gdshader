@@ -1,72 +1,46 @@
 shader_type spatial;
 
+// Shader definitions and constants
+#ifndef OCEAN_SURFACE_INCLUDED
+#define OCEAN_SURFACE_INCLUDED
 
 
+#include "Additional Shaders/UPS/DeclareDepthTexture.gdshaderinc"
 
+#include "BrunetonLighting.gdshaderinc"
+#include "OceanGlobals.gdshaderinc"
+#include "OceanMaterialProps.gdshaderinc"
+#include "OceanVolume.gdshaderinc"
+#include "OceanFoam.gdshaderinc"
 
+uniform vec4 _CameraDepthTexture_TexelSize;
 
+// Sample functions for Godot are simplified to use texture() instead of custom functions
+// The sampling depends on the type of texture and required mip level or derivatives.
 
-vec4 _CameraDepthTexture_TexelSize;
-//
-
-
-
-
-
-
-
-struct LightingInput
-{
-	vec3 normal;
-	vec3 viewDir;
-	float viewDist;
-    float roughnessMap;
-	vec3 positionWS;
-	vec4 shore;
-	vec4 positionNDC;
-    float viewDepth;
-	vec3 cameraPos;
-    Light mainLight;
-};
-
-struct BrunetonInputs
-{
-	vec3 lightDir_windSpace;
-	vec3 viewDir_windSpace;
-    vec3 normal_windSpace;
-    vec3 tangentX_windSpace;
-    vec3 tangentY_windSpace;
-	vec2 slopeVarianceSquared;
-};
-
-float Pow5(float x)
-{
-	return x * x * x * x * x;
+// Functions
+float Pow5(float x) {
+    return x * x * x * x * x;
 }
 
-vec3 PositionWsFromDepth(float rawDepth, vec2 screenUV, float4x4 inverseProj, float4x4 inverseView)
-{
-    vec4 positionCS = float4(screenUV * 2 - 1, rawDepth, 1);
-    vec4 positionVS = mul(inverseProj, positionCS);
+vec3 PositionWsFromDepth(float rawDepth, vec2 screenUV, mat4 inverseProj, mat4 inverseView) {
+    vec4 positionCS = vec4(screenUV * 2.0 - 1.0, rawDepth, 1.0);
+    vec4 positionVS = inverseProj * positionCS;
     positionVS /= positionVS.w;
-    return mul(inverseView, positionVS).xyz;
+    return (inverseView * positionVS).xyz;
 }
 
-vec2 SlopeVarianceSquared(float windSpeed, float viewDist, float alignement, float scale)
-{
-	float upwind = 0.01 * sqrt(windSpeed) * viewDist / (viewDist + scale);
-	return float2(upwind, upwind * (1 - 0.3 * alignement));
+vec2 SlopeVarianceSquared(float windSpeed, float viewDist, float alignment, float scale) {
+    float upwind = 0.01 * sqrt(windSpeed) * viewDist / (viewDist + scale);
+    return vec2(upwind, upwind * (1.0 - 0.3 * alignment));
 }
 
-float EffectiveFresnel(BrunetonInputs bi)
-{
-	const float R = 0.02;
-	float fresnel = R + (1 - R) * MeanFresnel(
-		bi.viewDir_windSpace,
-		bi.normal_windSpace,
-		bi.slopeVarianceSquared);
-	return clamp(fresnel);
+float EffectiveFresnel(vec3 viewDir_windSpace, vec3 normal_windSpace, vec2 slopeVarianceSquared) {
+    const float R = 0.02;
+    float fresnel = R + (1.0 - R) * MeanFresnel(viewDir_windSpace, normal_windSpace, slopeVarianceSquared);
+    return clamp(fresnel, 0.0, 1.0);
 }
+
 
 float ShlickFresnel(vec3 viewDir, vec3 normal)
 {
