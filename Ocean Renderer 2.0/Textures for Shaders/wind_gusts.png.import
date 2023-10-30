@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqjdne3g36qfm"
-path="res://.godot/imported/wind_gusts.png-29875417e6fb76a0c3e351d2b9420a4f.ctex"
+path="res://.godot/imported/wind_gusts.png-caabb1468d2cfd602f80d4021a85f993.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures for Shaders/wind_gusts.png"
-dest_files=["res://.godot/imported/wind_gusts.png-29875417e6fb76a0c3e351d2b9420a4f.ctex"]
+source_file="res://Ocean Renderer 2.0/Textures for Shaders/wind_gusts.png"
+dest_files=["res://.godot/imported/wind_gusts.png-caabb1468d2cfd602f80d4021a85f993.ctex"]
 
 [params]
 

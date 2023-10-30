@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://cj3ayr0u2lhfq"
+path="res://.godot/imported/TimeDependentSpectrum_compute.glsl-b64fc048ab3aaaf426c1594feb6dd531.res"
+
+[deps]
+
+source_file="res://Ocean Renderer 1.0/Compute Shaders/TimeDependentSpectrum_compute.glsl"
+dest_files=["res://.godot/imported/TimeDependentSpectrum_compute.glsl-b64fc048ab3aaaf426c1594feb6dd531.res"]
+
+[params]
+

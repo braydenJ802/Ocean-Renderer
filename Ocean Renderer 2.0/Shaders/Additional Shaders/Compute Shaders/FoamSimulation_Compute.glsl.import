@@ -3,12 +3,12 @@
 importer="glsl"
 type="RDShaderFile"
 uid="uid://br60pn7c4ka02"
-path="res://.godot/imported/FoamSimulation_Compute.glsl-a5a52acff042dfd71bb65ca01c341f15.res"
+path="res://.godot/imported/FoamSimulation_Compute.glsl-241ac52827eff304c22e06e653279ca7.res"
 
 [deps]
 
-source_file="res://Shaders/Additional Shaders/Compute Shaders/FoamSimulation_Compute.glsl"
-dest_files=["res://.godot/imported/FoamSimulation_Compute.glsl-a5a52acff042dfd71bb65ca01c341f15.res"]
+source_file="res://Ocean Renderer 2.0/Shaders/Additional Shaders/Compute Shaders/FoamSimulation_Compute.glsl"
+dest_files=["res://.godot/imported/FoamSimulation_Compute.glsl-241ac52827eff304c22e06e653279ca7.res"]
 
 [params]
 

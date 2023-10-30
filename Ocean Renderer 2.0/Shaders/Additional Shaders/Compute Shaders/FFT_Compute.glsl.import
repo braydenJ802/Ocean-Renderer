@@ -3,12 +3,12 @@
 importer="glsl"
 type="RDShaderFile"
 uid="uid://ba7b6anx3c7i0"
-path="res://.godot/imported/FFT_Compute.glsl-a52fd1689c4572a1bfd312122cd8b844.res"
+path="res://.godot/imported/FFT_Compute.glsl-c2ee7942ae82a51fbd9bdfc90198f2a8.res"
 
 [deps]
 
-source_file="res://Shaders/Additional Shaders/Compute Shaders/FFT_Compute.glsl"
-dest_files=["res://.godot/imported/FFT_Compute.glsl-a52fd1689c4572a1bfd312122cd8b844.res"]
+source_file="res://Ocean Renderer 2.0/Shaders/Additional Shaders/Compute Shaders/FFT_Compute.glsl"
+dest_files=["res://.godot/imported/FFT_Compute.glsl-c2ee7942ae82a51fbd9bdfc90198f2a8.res"]
 
 [params]
 

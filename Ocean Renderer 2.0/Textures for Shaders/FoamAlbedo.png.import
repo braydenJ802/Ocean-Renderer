@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdyf3crh5wcv4"
-path="res://.godot/imported/FoamAlbedo.png-857c2791902fc22f80db17c9e8fc7ca6.ctex"
+path="res://.godot/imported/FoamAlbedo.png-5a1586622ee093641578153b0fe9573a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures for Shaders/FoamAlbedo.png"
-dest_files=["res://.godot/imported/FoamAlbedo.png-857c2791902fc22f80db17c9e8fc7ca6.ctex"]
+source_file="res://Ocean Renderer 2.0/Textures for Shaders/FoamAlbedo.png"
+dest_files=["res://.godot/imported/FoamAlbedo.png-5a1586622ee093641578153b0fe9573a.ctex"]
 
 [params]
 

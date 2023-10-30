@@ -1,5 +1,4 @@
 #version 450
-void FillResultTextures()
 
 layout(rgba32f) writeonly uniform image2D<vec3> Displacement;
 layout(rgba32f) writeonly uniform image2D<vec4> Derivatives;

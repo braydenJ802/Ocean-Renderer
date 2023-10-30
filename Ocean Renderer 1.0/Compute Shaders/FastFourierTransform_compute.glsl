@@ -1,18 +1,11 @@
 #version 450
-void PrecomputeTwiddleFactorsAndInputIndices()
-void HorizontalStepFFT()
-void VerticalStepFFT()
-void HorizontalStepInverseFFT()
-void VerticalStepInverseFFT()
-void Scale()
-void Permute()
 
-static const float PI = 3.1415926;
+const float PI = 3.1415926;
 
-layout(rgba32f) writeonly uniform image2D<vec4> PrecomputeBuffer;
-layout(rgba32f) readonly uniform image2D<vec4> PrecomputedData;
-layout(rgba32f) writeonly uniform image2D<vec2> Buffer0;
-layout(rgba32f) writeonly uniform image2D<vec2> Buffer1;
+layout(rgba32f) writeonly uniform image2D PrecomputeBuffer;
+layout(rgba32f) readonly uniform image2D PrecomputedData;
+layout(rgba32f) writeonly uniform image2D Buffer0;
+layout(rgba32f) writeonly uniform image2D Buffer1;
 bool PingPong;
 uint Step;
 uint Size;
@@ -28,7 +21,7 @@ vec2 ComplexExp(vec2 a)
 }
 
 layout(local_size_x = 1, local_size_y = 8, local_size_z = 1) in;
-void PrecomputeTwiddleFactorsAndInputIndices(uint3 id : SV_DispatchThreadID)
+void PrecomputeTwiddleFactorsAndInputIndices(uvec3 id)
 {
 	uint b = Size >> (id.x + 1);
 	vec2 mult = 2 * PI * vec2(0, 1) / Size;
@@ -39,10 +32,10 @@ void PrecomputeTwiddleFactorsAndInputIndices(uint3 id : SV_DispatchThreadID)
 }
 
 layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
-void HorizontalStepFFT (uint3 id : SV_DispatchThreadID)
+void HorizontalStepFFT (uvec3 id)
 {
 	vec4 data = PrecomputedData[uint2(Step, id.x)];
-	uint2 inputsIndices = (uint2)data.ba;
+	uvec2 inputsIndices = uvec2(data.zw);
 	if (PingPong)
 	{
 		Buffer1[id.xy] = Buffer0[uint2(inputsIndices.x, id.y)]
@@ -56,10 +49,10 @@ void HorizontalStepFFT (uint3 id : SV_DispatchThreadID)
 }
 
 layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
-void VerticalStepFFT(uint3 id : SV_DispatchThreadID)
+void VerticalStepFFT(uvec3 id)
 {
 	vec4 data = PrecomputedData[uint2(Step, id.y)];
-	uint2 inputsIndices = (uint2)data.ba;
+	uvec2 inputsIndices = uvec2(data.zw);
 	if (PingPong)
 	{
 		Buffer1[id.xy] = Buffer0[uint2(id.x, inputsIndices.x)]
@@ -73,10 +66,10 @@ void VerticalStepFFT(uint3 id : SV_DispatchThreadID)
 }
 
 layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
-void HorizontalStepInverseFFT(uint3 id : SV_DispatchThreadID)
+void HorizontalStepInverseFFT(uvec3 id)
 {
 	vec4 data = PrecomputedData[uint2(Step, id.x)];
-	uint2 inputsIndices = (uint2)data.ba;
+	uvec2 inputsIndices = uvec2(data.zw);
 	if (PingPong)
 	{
 		Buffer1[id.xy] = Buffer0[uint2(inputsIndices.x, id.y)]
@@ -90,10 +83,10 @@ void HorizontalStepInverseFFT(uint3 id : SV_DispatchThreadID)
 }
 
 layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
-void VerticalStepInverseFFT(uint3 id : SV_DispatchThreadID)
+void VerticalStepInverseFFT(uvec3 id)
 {
 	vec4 data = PrecomputedData[uint2(Step, id.y)];
-	uint2 inputsIndices = (uint2)data.ba;
+	uvec2 inputsIndices = uvec2(data.zw);
 	if (PingPong)
 	{
 		Buffer1[id.xy] = Buffer0[uint2(id.x, inputsIndices.x)]
@@ -107,13 +100,13 @@ void VerticalStepInverseFFT(uint3 id : SV_DispatchThreadID)
 }
 
 layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
-void Scale(uint3 id : SV_DispatchThreadID)
+void Scale(uvec3 id)
 {
 	Buffer0[id.xy] = Buffer0[id.xy] / Size / Size;
 }
 
 layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
-void Permute(uint3 id : SV_DispatchThreadID)
+void Permute(uvec3 id)
 {
 	Buffer0[id.xy] = Buffer0[id.xy] * (1.0 - 2.0 * ((id.x + id.y) % 2));
 }

@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://ddld1gui83bmc"
+path="res://.godot/imported/InitialSpectrum_compute.glsl-fc58581d574325e3f5b29e0a84d5d8ff.res"
+
+[deps]
+
+source_file="res://Ocean Renderer 1.0/Compute Shaders/InitialSpectrum_compute.glsl"
+dest_files=["res://.godot/imported/InitialSpectrum_compute.glsl-fc58581d574325e3f5b29e0a84d5d8ff.res"]
+
+[params]
+

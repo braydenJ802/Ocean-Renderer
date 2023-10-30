@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://pcfpr25nw30m"
+path="res://.godot/imported/FastFourierTransform_compute.glsl-3495acd9909ad71c6be5f5c2b0f9b022.res"
+
+[deps]
+
+source_file="res://Ocean Renderer 1.0/Compute Shaders/FastFourierTransform_compute.glsl"
+dest_files=["res://.godot/imported/FastFourierTransform_compute.glsl-3495acd9909ad71c6be5f5c2b0f9b022.res"]
+
+[params]
+

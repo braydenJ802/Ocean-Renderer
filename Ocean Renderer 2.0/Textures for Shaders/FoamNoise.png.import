@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://i4qhqcymqeol"
-path="res://.godot/imported/FoamNoise.png-31ee24a68a0bf5302adf78feb1e3c336.ctex"
+path="res://.godot/imported/FoamNoise.png-4fbc0f73edf8aff8e1f3aba63af5ab69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures for Shaders/FoamNoise.png"
-dest_files=["res://.godot/imported/FoamNoise.png-31ee24a68a0bf5302adf78feb1e3c336.ctex"]
+source_file="res://Ocean Renderer 2.0/Textures for Shaders/FoamNoise.png"
+dest_files=["res://.godot/imported/FoamNoise.png-4fbc0f73edf8aff8e1f3aba63af5ab69.ctex"]
 
 [params]
 

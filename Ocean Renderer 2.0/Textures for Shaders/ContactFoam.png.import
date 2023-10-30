@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqnjj8es61r3d"
-path="res://.godot/imported/ContactFoam.png-8f586d4109e35f0cbdf93a3abdea47c6.ctex"
+path="res://.godot/imported/ContactFoam.png-4911724535275217dd7f87fd94d8760e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures for Shaders/ContactFoam.png"
-dest_files=["res://.godot/imported/ContactFoam.png-8f586d4109e35f0cbdf93a3abdea47c6.ctex"]
+source_file="res://Ocean Renderer 2.0/Textures for Shaders/ContactFoam.png"
+dest_files=["res://.godot/imported/ContactFoam.png-4911724535275217dd7f87fd94d8760e.ctex"]
 
 [params]
 
