@@ -1,4 +1,3 @@
-shader_type spatial;
 
 // Shader definitions and constants
 #ifndef OCEAN_SURFACE_INCLUDED

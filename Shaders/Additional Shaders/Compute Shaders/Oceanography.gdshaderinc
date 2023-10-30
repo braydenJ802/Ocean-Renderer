@@ -3,10 +3,10 @@
 #define OCEANOGRAPHY_INCLUDED
 
 #define OCEANOGRAPHY_PI 3.1415926
-static const float g = 9.81;
-static const float sigmaOverRho = 0.074e-3;
+const float g = 9.81;
+const float sigmaOverRho = 0.074e-3;
 
-float Depth;
+uniform float Depth;
 
 struct SpectrumParams
 {
@@ -38,7 +38,7 @@ float FrequencyDerivative(float k, float depth)
 	
 	//return g * (depth * k / ch / ch + th) / freq / 2;
 	return (depth * (sigmaOverRho * k * k * k + g * k) / ch / ch
-		+ (g + 3 * sigmaOverRho * k * k) * th) * 0.5 / freq;
+		+ (g + 3.0 * sigmaOverRho * k * k) * th) * 0.5 / freq;
 }
 
 //---------------------------------
@@ -58,8 +58,8 @@ float DonelanBannerBeta(float x)
 float DonelanBanner(float theta, float omega, float peakOmega)
 {
 	float beta = DonelanBannerBeta(omega / peakOmega);
-	float sech = 1 / cosh(beta * theta);
-	return beta / 2 / tanh(beta * 3.1416) * sech * sech;
+	float sech = 1.0 / cosh(beta * theta);
+	return beta / 2.0 / tanh(beta * 3.1416) * sech * sech;
 }
 
 float NormalisationFactor(float s)
@@ -67,7 +67,7 @@ float NormalisationFactor(float s)
 	float s2 = s * s;
 	float s3 = s2 * s;
 	float s4 = s3 * s;
-	if (s < 5)
+	if (s < 5.0)
 		return -0.000564 * s4 + 0.00776 * s3 - 0.044 * s2 + 0.192 * s + 0.163;
 	else
 		return -4.80e-08 * s4 + 1.07e-05 * s3 - 9.53e-04 * s2 + 5.90e-02 * s + 3.93e-01;
@@ -87,7 +87,7 @@ float SpreadPowerHasselman(float omega, float peakOmega, float u)
 
 float Cosine2s(float theta, float s)
 {
-	return NormalisationFactor(s) * pow(abs(cos(0.5 * theta)), 2 * s);
+	return NormalisationFactor(s) * pow(abs(cos(0.5 * theta)), 2.0 * s);
 }
 
 
@@ -96,10 +96,10 @@ float DirectionSpectrum(float theta, float omega, float peakOmega, SpectrumParam
 	//float spread = DonelanBanner(angle, omega, peakOmega);
 	
 	float s = SpreadPowerHasselman(omega, peakOmega, pars.windSpeed)
-			+ lerp(16 * tanh(min(omega / peakOmega / 10, 20)), 25, pars.extraAlignment) * pars.extraAlignment * pars.extraAlignment;
+			+ mix(16.0 * tanh(min(omega / peakOmega / 10.0, 20.0)), 25.0, pars.extraAlignment) * pars.extraAlignment * pars.extraAlignment;
 	float spread = Cosine2s(theta, s);
 	
-	return lerp(0.5 / OCEANOGRAPHY_PI, spread, pars.alignment);
+    return mix(0.5 / OCEANOGRAPHY_PI, spread, pars.alignment);
 }
 
 //---------------------------------
@@ -110,12 +110,12 @@ float DirectionSpectrum(float theta, float omega, float peakOmega, SpectrumParam
 float PiersonMoskowitzPeakOmega(float u)
 {
 	float nu = 0.13;
-	return 2 * OCEANOGRAPHY_PI * nu * g / u;
+    return 2.0 * OCEANOGRAPHY_PI * nu * g / u;
 }
 
 float PiersonMoskowitz(float omega, float peakOmega)
 {
-	float oneOverOmega = 1 / omega;
+	float oneOverOmega = 1.0 / omega;
 	float peakOmegaOverOmega = peakOmega / omega;
 	
 	return 8.1e-3 * g * g * oneOverOmega * oneOverOmega * oneOverOmega * oneOverOmega * oneOverOmega
@@ -131,7 +131,7 @@ float JonswapAlpha(float chi)
 float JonswapPeakOmega(float chi, float u)
 {
 	float nu = 3.5 * pow(chi, -0.33);
-	return 2 * OCEANOGRAPHY_PI * nu * g / u;
+    return 2.0 * OCEANOGRAPHY_PI * nu * g / u;
 }
 
 float JONSWAP(float omega, float peakOmega, float chi, float gamma)
@@ -143,9 +143,9 @@ float JONSWAP(float omega, float peakOmega, float chi, float gamma)
 		sigma = 0.09;
 	
 	float r = exp(-(omega - peakOmega) * (omega - peakOmega)
-		/ 2 / sigma / sigma / peakOmega / peakOmega);
+		/ 2.0 / sigma / sigma / peakOmega / peakOmega);
 	
-	float oneOverOmega = 1 / omega;
+	float oneOverOmega = 1.0 / omega;
 	float peakOmegaOverOmega = peakOmega / omega;
 	return JonswapAlpha(chi) * g * g
 		* oneOverOmega * oneOverOmega * oneOverOmega * oneOverOmega * oneOverOmega
@@ -156,21 +156,21 @@ float JONSWAP(float omega, float peakOmega, float chi, float gamma)
 float TMACorrection(float omega, float depth)
 {
 	float omegaH = omega * sqrt(depth / g);
-	if (omegaH <= 1)
+	if (omegaH <= 1.0)
 		return 0.5 * omegaH * omegaH;
-	else if (omegaH < 2)
+	else if (omegaH < 2.0)
 		return 1.0 - 0.5 * (2.0 - omegaH) * (2.0 - omegaH);
 	else 
-		return 1;
+		return 1.0;
 }
 
 float FullSpectrum(float omega, float theta, SpectrumParams pars)
 {
-	float energySpectrum = 1;
+	float energySpectrum = 1.0;
 	float spread;
-	float peakOmega = 1;
+	float peakOmega = 1.0;
 	
-	float chi = abs(g * pars.fetch * 1000 / pars.windSpeed / pars.windSpeed);
+	float chi = abs(g * pars.fetch * 1000.0 / pars.windSpeed / pars.windSpeed);
 	chi = min(1e4, chi);
 	
 	if (pars.energySpectrum == 0)

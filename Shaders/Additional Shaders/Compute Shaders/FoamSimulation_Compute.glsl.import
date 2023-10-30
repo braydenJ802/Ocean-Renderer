@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://br60pn7c4ka02"
+path="res://.godot/imported/FoamSimulation_Compute.glsl-a5a52acff042dfd71bb65ca01c341f15.res"
+
+[deps]
+
+source_file="res://Shaders/Additional Shaders/Compute Shaders/FoamSimulation_Compute.glsl"
+dest_files=["res://.godot/imported/FoamSimulation_Compute.glsl-a5a52acff042dfd71bb65ca01c341f15.res"]
+
+[params]
+

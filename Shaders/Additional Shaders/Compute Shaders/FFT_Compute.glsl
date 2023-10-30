@@ -1,8 +1,7 @@
-#pragma kernel Fft
-#pragma kernel PostProcess
 
-#pragma multi_compile _ FFT_ARRAY_TARGET
-#pragma multi_compile _ FFT_SIZE_128 FFT_SIZE_256 FFT_SIZE_512
+#[compute]
+#version 450
+
 
 #if defined(FFT_SIZE_512)
 #define SIZE 512
@@ -37,12 +36,12 @@ cbuffer Params
 
 groupshared float4 buffer[2][SIZE];
 
-float2 ComplexMult(float2 a, float2 b)
+vec2 ComplexMult(vec2 a, vec2 b)
 {
-	return float2(a.x * b.x - a.y * b.y, a.x * b.y + a.y * b.x);
+	return vec2(a.x * b.x - a.y * b.y, a.x * b.y + a.y * b.x);
 }
 
-void ButterflyValues(uint step, uint index, out uint2 indices, out float2 twiddle)
+void ButterflyValues(uint step, uint index, out uint2 indices, out vec2 twiddle)
 {
 	const float twoPi = 6.28318530718;
 	uint b = Size >> (step + 1);
@@ -64,7 +63,7 @@ float4 DoFft(uint threadIndex, float4 input)
 	for (uint step = 0; step < LOG_SIZE; step++)
 	{
 		uint2 inputsIndices;
-		float2 twiddle;
+		vec2 twiddle;
 		ButterflyValues(step, threadIndex, inputsIndices, twiddle);
 		
 		float4 v = buffer[flag][inputsIndices.y];

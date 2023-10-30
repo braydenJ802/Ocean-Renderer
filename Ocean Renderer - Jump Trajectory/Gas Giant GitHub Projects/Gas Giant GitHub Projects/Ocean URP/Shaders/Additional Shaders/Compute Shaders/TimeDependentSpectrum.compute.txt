@@ -1,4 +1,4 @@
-﻿#pragma kernel CalculateAmplitudes
+#pragma kernel CalculateAmplitudes
 
 #define PI 3.1415926
 
@@ -11,8 +11,8 @@ Texture2DArray<float4> WavesData;
 
 cbuffer Params
 {
-    uint CascadesCount;
-    float Time;
+	uint CascadesCount;
+	float Time;
 };
 
 
@@ -50,7 +50,7 @@ void CalculateForCascade(uint3 id)
 	Result[uint3(id.xy, id.z * 2)] = float4(float2(displacementX.x - displacementY.y, displacementX.y + displacementY.x),
 							  float2(displacementZ.x - displacementZ_dx.y, displacementZ.y + displacementZ_dx.x));
 	Result[uint3(id.xy, id.z * 2 + 1)] = float4(float2(displacementY_dx.x - displacementY_dz.y, displacementY_dx.y + displacementY_dz.x),
-							     float2(displacementX_dx.x - displacementZ_dz.y, displacementX_dx.y + displacementZ_dz.x));
+								 float2(displacementX_dx.x - displacementZ_dz.y, displacementX_dx.y + displacementZ_dz.x));
 }
 
 [numthreads(8,8,1)]
