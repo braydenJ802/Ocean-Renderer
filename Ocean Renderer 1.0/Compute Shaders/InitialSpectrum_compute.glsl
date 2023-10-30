@@ -1,35 +1,40 @@
+#[compute]
 #version 450
-void CalculateInitialSpectrum()
-void CalculateConjugatedSpectrum()
 
-static const float PI = 3.1415926;
+layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
 
-layout(rgba32f) writeonly uniform image2D<vec4> H0;
-// wave vector x, 1 / magnitude, wave vector z, frequency
-layout(rgba32f) writeonly uniform image2D<vec4> WavesData;
-layout(rgba32f) writeonly uniform image2D<vec2> H0K;
+const float PI = 3.14159265358979323846264338327950;
 
-layout(rgba32f) readonly uniform image2D<vec2> Noise;
-uint Size;
-float LengthScale;
-float CutoffHigh;
-float CutoffLow;
-float GravityAcceleration;
-float Depth;
+//maybe use writeonly instead of coherent
+layout(binding = 0, rgba32f) coherent uniform image2D H0; // Corresponding to RWTexture2D<float4> H0 in HLSL
+layout(binding = 1, rgba32f) coherent uniform image2D WavesData; // Corresponding to RWTexture2D<float4> WavesData in HLSL
+layout(binding = 2, rg32f) coherent uniform image2D H0K; // Corresponding to RWTexture2D<float2> H0K in HLSL
 
-struct SpectrumParameters
-{
-	float scale;
-	float angle;
-	float spreadBlend;
-	float swell;
-	float alpha;
-	float peakOmega;
-	float gamma;
-	float shortWavesFade;
+layout(binding = 3, rg32f) readonly uniform image2D Noise; // Corresponding to Texture2D<float2> Noise in HLSL
+
+
+uniform uint Size;
+uniform float LengthScale;
+uniform float CutoffHigh;
+uniform float CutoffLow;
+uniform float GravityAcceleration;
+uniform float Depth;
+
+struct SpectrumParameters {
+    float scale;
+    float angle;
+    float spreadBlend;
+    float swell;
+    float alpha;
+    float peakOmega;
+    float gamma;
+    float shortWavesFade;
 };
 
-StructuredBuffer<SpectrumParameters> Spectrums;
+layout(std430, binding = 4) buffer SpectrumBuffer {
+    SpectrumParameters Spectrums[];
+};
+
 
 
 float Frequency(float k, float g, float depth)
@@ -129,41 +134,46 @@ float ShortWavesFade(float kLength, SpectrumParameters pars)
 	return exp(-pars.shortWavesFade * pars.shortWavesFade * kLength * kLength);
 }
 
-[numthreads(8, 8, 1)]
-void CalculateInitialSpectrum(uint3 id : SV_DispatchThreadID)
-{
-	float deltaK = 2 * PI / LengthScale;
-	int nx = id.x - Size / 2;
-	int nz = id.y - Size / 2;
-	vec2 k = vec2(nx, nz) * deltaK;
-	float kLength = length(k);
-	
-	if (kLength <= CutoffHigh && kLength >= CutoffLow)
-	{
-		float kAngle = atan2(k.y, k.x);
-		float omega = Frequency(kLength, GravityAcceleration, Depth);
-		WavesData[id.xy] = vec4(k.x, 1 / kLength, k.y, omega);
-		float dOmegadk = FrequencyDerivative(kLength, GravityAcceleration, Depth);
 
-		float spectrum = JONSWAP(omega, GravityAcceleration, Depth, Spectrums[0])
-			* DirectionSpectrum(kAngle, omega, Spectrums[0]) * ShortWavesFade(kLength, Spectrums[0]);
-		if (Spectrums[1].scale > 0)
-			spectrum += JONSWAP(omega, GravityAcceleration, Depth, Spectrums[1])
-			* DirectionSpectrum(kAngle, omega, Spectrums[1]) * ShortWavesFade(kLength, Spectrums[1]);
-		H0K[id.xy] = vec2(Noise[id.xy].x, Noise[id.xy].y)
-			* sqrt(2 * spectrum * abs(dOmegadk) / kLength * deltaK * deltaK);
-	}
-	else
-	{
-		H0K[id.xy] = 0;
-		WavesData[id.xy] = vec4(k.x, 1, k.y, 0);
-	}
+void CalculateInitialSpectrum() {
+    uvec3 id = gl_GlobalInvocationID;
+    float deltaK = 2 * PI / LengthScale;
+    int nx = int(id.x) - int(Size) / 2;
+    int nz = int(id.y) - int(Size) / 2;
+    vec2 k = vec2(nx, nz) * deltaK;
+    float kLength = length(k);
+    
+    if (kLength <= CutoffHigh && kLength >= CutoffLow) {
+        float kAngle = atan(k.y, k.x);
+        float omega = Frequency(kLength, GravityAcceleration, Depth);
+        imageStore(WavesData, ivec2(id.xy), vec4(k.x, 1 / kLength, k.y, omega));
+        float dOmegadk = FrequencyDerivative(kLength, GravityAcceleration, Depth);
+
+        float spectrum = JONSWAP(omega, GravityAcceleration, Depth, Spectrums[0])
+            * DirectionSpectrum(kAngle, omega, Spectrums[0]) * ShortWavesFade(kLength, Spectrums[0]);
+        if (Spectrums[1].scale > 0) {
+           
+		    spectrum += JONSWAP(omega, GravityAcceleration, Depth, Spectrums[1])
+            * DirectionSpectrum(kAngle, omega, Spectrums[1]) * ShortWavesFade(kLength, Spectrums[1]);
+
+		}
+
+        vec4 NoiseSample = imageLoad(Noise, ivec2(id.xy));
+        imageStore(H0K, ivec2(id.xy), vec4(NoiseSample.x, NoiseSample.y, 0.0, 0.0) * sqrt(2 * spectrum * abs(dOmegadk) / kLength * deltaK * deltaK));
+    }
+    else {
+        imageStore(H0K, ivec2(id.xy), vec4(0.0));
+        imageStore(WavesData, ivec2(id.xy), vec4(k.x, 1, k.y, 0));
+    }
 }
 
-[numthreads(8,8,1)]
-void CalculateConjugatedSpectrum(uint3 id : SV_DispatchThreadID)
-{
-	vec2 h0K = H0K[id.xy];
-	vec2 h0MinusK = H0K[uint2((Size - id.x) % Size, (Size - id.y) % Size)];
-	H0[id.xy] = vec4(h0K.x, h0K.y, h0MinusK.x, -h0MinusK.y);
+void CalculateConjugatedSpectrum() {
+    uvec3 id = gl_GlobalInvocationID;
+    vec4 h0K = imageLoad(H0K, ivec2(id.xy));
+    vec4 h0MinusK = imageLoad(H0K, ivec2((Size - id.x) % Size, (Size - id.y) % Size));
+    imageStore(H0, ivec2(id.xy), vec4(h0K.x, h0K.y, h0MinusK.x, -h0MinusK.y));
 }
+
+
+
+

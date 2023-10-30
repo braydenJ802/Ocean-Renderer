@@ -1,13 +1,13 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698643050
+::res://::1698689550
 README.md::TextFile::-1::1698627484::0::1::::<><>::
 ::res://Extra References/::1698621865
 ::res://Ocean Renderer 1.0/::1698641199
-::res://Ocean Renderer 1.0/Compute Shaders/::1698646449
-FastFourierTransform_compute.glsl::RDShaderFile::1057292717939015758::1698645940::1698646449::1::::<><>::
-InitialSpectrum_compute.glsl::RDShaderFile::7392765665352758286::1698641198::1698643426::1::::<><>::
-TimeDependentSpectrum_compute.glsl::RDShaderFile::5462387328758177822::1698641198::1698643426::1::::<><>::
-WavesTexturesMerger_compute.glsl::RDShaderFile::6099574031283097573::1698646487::1698646498::1::::<><>::
+::res://Ocean Renderer 1.0/Compute Shaders/::1698691298
+FastFourierTransform_compute.glsl::RDShaderFile::1057292717939015758::1698691103::1698689169::1::::<><>::
+InitialSpectrum_compute.glsl::RDShaderFile::7392765665352758286::1698691294::1698691298::1::::<><>::
+TimeDependentSpectrum_compute.glsl::RDShaderFile::5462387328758177822::1698687936::1698687946::1::::<><>::
+WavesTexturesMerger_compute.glsl::RDShaderFile::6099574031283097573::1698689520::1698689524::1::::<><>::
 ::res://Ocean Renderer 1.0/Scripts/::1698641199
 FastFourierTransform.cs.txt::TextFile::-1::1698641198::0::1::::<><>::
 OceanGeometry.cs.txt::TextFile::-1::1698641198::0::1::::<><>::
@@ -36,10 +36,11 @@ OceanVolume.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 ::res://Ocean Renderer 2.0/Shaders/Additional Shaders/::1698627498
 GodotToUnitySH9.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 MathExtensions.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-::res://Ocean Renderer 2.0/Shaders/Additional Shaders/Compute Shaders/::1698643051
-FFT_Compute.glsl::RDShaderFile::2452596869591837593::1698622255::1698643051::1::::<><>::
-FoamSimulation_Compute.glsl::RDShaderFile::3645172180010551373::1698622609::1698643051::1::::<><>::
-InitialSpectrum_Compute.glsl::RDShaderFile::3129078029156017186::1698623146::1698643051::1::::<><>::
+::res://Ocean Renderer 2.0/Shaders/Additional Shaders/Compute Shaders/::1698697134
+FFT_Compute.glsl::RDShaderFile::2452596869591837593::1698694577::1698694519::1::::<><>::
+FoamSimulation_Compute.glsl::RDShaderFile::3645172180010551373::1698694840::1698694979::1::::<><>::
+GPURandom.glsl::RDShaderFile::6779107089425147307::1698697568::1698697586::1::::<><>::
+InitialSpectrum_Compute.glsl::RDShaderFile::3129078029156017186::1698697094::1698697134::1::::<><>::
 Oceanography.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 TimeDependentSpectrum.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 ::res://Ocean Renderer 2.0/Shaders/Additional Shaders/UPS/::1698627498
@@ -121,11 +122,11 @@ OceanVolume.hlsl.txt::TextFile::-1::1698559314::0::1::::<><>::
 FullscreenVert.hlsl.txt::TextFile::-1::1698531552::0::1::::<><>::
 StereographicSky.shader.txt::TextFile::-1::1698531553::0::1::::<><>::
 UnderwaterEffect.shader.txt::TextFile::-1::1698531553::0::1::::<><>::
-::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/Shaders/Additional Shaders/Compute Shaders/::1698626967
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/Shaders/Additional Shaders/Compute Shaders/::1698695926
 FFT.compute.txt::TextFile::-1::1698624172::0::1::::<><>::
 FoamSimulation.compute.txt::TextFile::-1::1698531553::0::1::::<><>::
 GPURandom.hlsl.txt::TextFile::-1::1698531553::0::1::::<><>::
-InitialSpectrum.compute.txt::TextFile::-1::1698531553::0::1::::<><>::
+InitialSpectrum.compute.txt::TextFile::-1::1698695926::0::1::::<><>::
 Oceanography.hlsl.txt::TextFile::-1::1698624172::0::1::::<><>::
 TimeDependentSpectrum.compute.txt::TextFile::-1::1698626967::0::1::::<><>::
 ::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/Textures/::1698544160

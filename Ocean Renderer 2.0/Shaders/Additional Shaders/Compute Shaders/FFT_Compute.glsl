@@ -1,7 +1,7 @@
-
 #[compute]
 #version 450
 
+#define FFT_SIZE_256 // Adjust this define as needed
 
 #if defined(FFT_SIZE_512)
 #define SIZE 512
@@ -17,16 +17,15 @@
 #define LOG_SIZE 6
 #endif
 
-static uint Size = SIZE;
+const uint Size = SIZE;
 
 #ifdef FFT_ARRAY_TARGET
-RWTexture2DArray<float4> Target;
+layout(binding = 0, rgba32f) coherent image3D Target;
 #else
-RWTexture2D<float4> Target;
+layout(binding = 0, rgba32f) coherent image2D Target;
 #endif
 
-cbuffer Params
-{
+layout(std140, binding = 1) uniform Params {
 	uint TargetsCount;
 	bool Direction;
 	bool Inverse;
@@ -34,86 +33,80 @@ cbuffer Params
 	bool Permute;
 };
 
-groupshared float4 buffer[2][SIZE];
+shared vec4 buffer[2][SIZE];
 
-vec2 ComplexMult(vec2 a, vec2 b)
-{
+vec2 ComplexMult(vec2 a, vec2 b) {
 	return vec2(a.x * b.x - a.y * b.y, a.x * b.y + a.y * b.x);
 }
 
-void ButterflyValues(uint step, uint index, out uint2 indices, out vec2 twiddle)
-{
+void ButterflyValues(uint step, uint index, out uvec2 indices, out vec2 twiddle) {
 	const float twoPi = 6.28318530718;
 	uint b = Size >> (step + 1);
 	uint w = b * (index / b);
 	uint i = (w + index) % Size;
-	sincos(-twoPi / Size * w, twiddle.y, twiddle.x);
+	float s, c;
+	sincos(-twoPi / float(Size) * float(w), s, c);
+	twiddle = vec2(c, s);
 	if (Inverse)
 		twiddle.y = -twiddle.y;
-	indices = uint2(i, i + b);
+	indices = uvec2(i, i + b);
 }
 
-float4 DoFft(uint threadIndex, float4 input)
-{
+vec4 DoFft(uint threadIndex, vec4 input) {
 	buffer[0][threadIndex] = input;
-	GroupMemoryBarrierWithGroupSync();
+	barrier();
 	bool flag = false;
-	
-	[unroll(LOG_SIZE)]
-	for (uint step = 0; step < LOG_SIZE; step++)
-	{
-		uint2 inputsIndices;
+
+	for (uint step = 0; step < LOG_SIZE; step++) {
+		uvec2 inputsIndices;
 		vec2 twiddle;
 		ButterflyValues(step, threadIndex, inputsIndices, twiddle);
-		
-		float4 v = buffer[flag][inputsIndices.y];
+
+		vec4 v = buffer[flag][inputsIndices.y];
 		buffer[!flag][threadIndex] = buffer[flag][inputsIndices.x]
-			+ float4(ComplexMult(twiddle, v.xy), ComplexMult(twiddle, v.zw));
+			+ vec4(ComplexMult(twiddle, v.xy), ComplexMult(twiddle, v.zw));
 		flag = !flag;
-		GroupMemoryBarrierWithGroupSync();
+		barrier();
 	}
-	
+
 	return buffer[flag][threadIndex];
 }
 
-[numthreads(SIZE, 1, 1)]
-void Fft(uint3 id : SV_DispatchThreadID)
-{
-	uint threadIndex = id.x;
-	uint2 targetIndex;
+layout(local_size_x = SIZE, local_size_y = 1, local_size_z = 1) in;
+void Fft() {
+	uint threadIndex = gl_LocalInvocationID.x;
+	uvec2 targetIndex;
 	if (Direction)
-		targetIndex = id.yx;
+		targetIndex = gl_WorkGroupID.yx;
 	else
-		targetIndex = id.xy;
-	
+		targetIndex = gl_WorkGroupID.xy;
+
 #ifdef FFT_ARRAY_TARGET
-	for (uint k = 0; k < TargetsCount; k++)
-	{
-		Target[uint3(targetIndex, k)] = DoFft(threadIndex, Target[uint3(targetIndex, k)]);
+	for (uint k = 0; k < TargetsCount; k++) {
+		imageStore(Target, ivec3(targetIndex, k), DoFft(threadIndex, imageLoad(Target, ivec3(targetIndex, k))));
 	}
 #else
-	Target[targetIndex] = DoFft(threadIndex, Target[targetIndex]);
+	imageStore(Target, ivec2(targetIndex), DoFft(threadIndex, imageLoad(Target, ivec2(targetIndex))));
 #endif
 }
 
-float4 DoPostProcess(float4 input, uint2 id)
-{
+vec4 DoPostProcess(vec4 input, uvec2 id) {
 	if (Scale)
-		input /= Size * Size;
+		input /= float(Size * Size);
 	if (Permute)
-		input *= 1.0 - 2.0 * ((id.x + id.y) % 2);
+		input *= 1.0 - 2.0 * float((id.x + id.y) % 2);
 	return input;
 }
 
-[numthreads(8, 8, 1)]
-void PostProcess(uint3 id : SV_DispatchThreadID)
-{
+layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
+void PostProcess() {
 #ifdef FFT_ARRAY_TARGET
-	for (uint i = 0; i < TargetsCount; i++)
-	{
-		Target[uint3(id.xy, i)] = DoPostProcess(Target[uint3(id.xy, i)], id.xy);
+	for (uint i = 0; i < TargetsCount; i++) {
+		uvec2 id = gl_LocalInvocationID.xy;
+		imageStore(Target, ivec3(id, i), DoPostProcess(imageLoad(Target, ivec3(id, i)), id));
 	}
 #else
-	Target[id.xy] = DoPostProcess(Target[id.xy], id.xy);
+	uvec2 id = gl_LocalInvocationID.xy;
+	imageStore(Target, ivec2(id), DoPostProcess(imageLoad(Target, ivec2(id)), id));
 #endif
 }

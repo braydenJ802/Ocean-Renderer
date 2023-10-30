@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://c3t35yig5tf0n"
+path="res://.godot/imported/GPURandom.glsl-6dc2153e2d6e691ad2bea2f97ce74863.res"
+
+[deps]
+
+source_file="res://Ocean Renderer 2.0/Shaders/Additional Shaders/Compute Shaders/GPURandom.glsl"
+dest_files=["res://.godot/imported/GPURandom.glsl-6dc2153e2d6e691ad2bea2f97ce74863.res"]
+
+[params]
+
