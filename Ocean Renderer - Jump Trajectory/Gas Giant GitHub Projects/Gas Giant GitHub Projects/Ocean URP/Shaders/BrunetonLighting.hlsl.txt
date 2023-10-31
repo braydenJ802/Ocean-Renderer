@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Real-time Realistic Ocean Lighting using Seamless Transitions from Geometry to BRDF
  * Copyright (c) 2009 INRIA
  * All rights reserved.
@@ -40,7 +40,7 @@
 
 float meanFresnel(float cosThetaV, float sigmaV)
 {
-    return pow(abs(1.0 - cosThetaV), 5.0 * exp(-2.69 * sigmaV)) / (1.0 + 22.7 * pow(abs(sigmaV), 1.5));
+	return pow(abs(1.0 - cosThetaV), 5.0 * exp(-2.69 * sigmaV)) / (1.0 + 22.7 * pow(abs(sigmaV), 1.5));
 }
 
 // V, N in wind space
@@ -116,7 +116,7 @@ float3 MeanSkyRadiance(Texture2D skyMap, SamplerState skyMapSampler, float4x4 wi
 	float2 dux = 2.0 * (U(windToWorld, float2(eps, 0.0), V, N, Tx, Ty) - u0) / eps * sqrt(sigmaSq.x);
 	float2 duy = 2.0 * (U(windToWorld, float2(0.0, eps), V, N, Tx, Ty) - u0) / eps * sqrt(sigmaSq.y);
 
-    result = skyMap.SampleGrad(skyMapSampler, u0 * (0.5 / 1.1) + 0.5, dux * (0.5 / 1.1), duy * (0.5 / 1.1));
+	result = skyMap.SampleGrad(skyMapSampler, u0 * (0.5 / 1.1) + 0.5, dux * (0.5 / 1.1), duy * (0.5 / 1.1));
 	//result = tex2D(_SkyMap, u0 * (0.5 / 1.1) + 0.5);
 
 	return result.rgb;

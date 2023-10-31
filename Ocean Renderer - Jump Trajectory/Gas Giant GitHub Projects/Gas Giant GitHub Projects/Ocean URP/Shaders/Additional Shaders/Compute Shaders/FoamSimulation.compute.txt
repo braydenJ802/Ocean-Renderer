@@ -1,4 +1,4 @@
-﻿#pragma kernel Simulate
+#pragma kernel Simulate
 #pragma kernel Initialize
 
 RWTexture2DArray<float4> Turbulence;
@@ -7,9 +7,9 @@ RWTexture2DArray<float4> Input;
 
 cbuffer Params
 {
-    uint CascadesCount;
-    float DeltaTime;
-    float FoamDecayRate;
+	uint CascadesCount;
+	float DeltaTime;
+	float FoamDecayRate;
 };
 
 

@@ -1,1 +1,13 @@
-res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/Shaders/Additional Shaders/Compute Shaders/InitialSpectrum.compute.txt
+res://Scenes/main.tscn
+res://Ocean Renderer 2.0/Shaders/BrunetonLighting.gdshaderinc
+res://Ocean Renderer 2.0/Shaders/Additional Shaders/Compute Shaders/Oceanography.gdshaderinc
+res://Ocean Renderer 2.0/Shaders/OceanGradient.gdshaderinc
+res://Ocean Renderer 2.0/Shaders/OceanGlobals.gdshaderinc
+res://Ocean Renderer 2.0/Shaders/OceanSimulationSampling.gdshaderinc
+res://Ocean Renderer 2.0/Shaders/OceanMaterialProps.gdshaderinc
+res://Ocean Renderer 2.0/Shaders/OceanFoam.gdshaderinc
+res://Ocean Renderer 2.0/Shaders/GeoClipMap.gdshaderinc
+res://Ocean Renderer 2.0/Shaders/Ocean.gdshaderinc
+res://Ocean Renderer 2.0/Shaders/OceanShoreMap.gdshaderinc
+res://Ocean Renderer 2.0/Shaders/OceanVolume.gdshaderinc
+res://Ocean Renderer 2.0/Shaders/OceanSurface.gdshaderinc

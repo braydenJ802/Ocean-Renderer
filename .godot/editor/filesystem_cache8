@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698704924
+::res://::1698720814
 README.md::TextFile::-1::1698627484::0::1::::<><>::
 ::res://Extra References/::1698621865
 ::res://Ocean Renderer 1.0/::1698641199
@@ -21,28 +21,28 @@ Ocean.txt::TextFile::-1::1698641199::0::1::::<><>::
 ::res://Ocean Renderer 2.0/Scripts/::1698531786
 ::res://Ocean Renderer 2.0/Scripts/External Scripts/::1698531773
 ::res://Ocean Renderer 2.0/Scripts/Runtime/::1698531786
-::res://Ocean Renderer 2.0/Shaders/::1698704911
-BrunetonLighting.gdshaderinc::ShaderInclude::-1::1698704911::0::1::::<><>::
-GeoClipMap.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-Ocean.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-OceanFoam.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-OceanGlobals.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-OceanGradient.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-OceanMaterialProps.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-OceanShoreMap.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-OceanSimulationSampling.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-OceanSurface.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-OceanVolume.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
+::res://Ocean Renderer 2.0/Shaders/::1698720883
+BrunetonLighting.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
+GeoClipMap.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
+Ocean.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
+OceanFoam.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
+OceanGlobals.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
+OceanGradient.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
+OceanMaterialProps.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
+OceanShoreMap.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
+OceanSimulationSampling.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
+OceanSurface.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
+OceanVolume.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
 ::res://Ocean Renderer 2.0/Shaders/Additional Shaders/::1698627498
 GodotToUnitySH9.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 MathExtensions.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-::res://Ocean Renderer 2.0/Shaders/Additional Shaders/Compute Shaders/::1698718399
+::res://Ocean Renderer 2.0/Shaders/Additional Shaders/Compute Shaders/::1698721256
 FFT_Compute.glsl::RDShaderFile::2452596869591837593::1698707701::1698707672::1::::<><>::
 FoamSimulation_Compute.glsl::RDShaderFile::3645172180010551373::1698705900::1698705902::1::::<><>::
 GPURandom.glsl::RDShaderFile::6779107089425147307::1698711509::1698711502::1::::<><>::
-InitialSpectrum_Compute.glsl::RDShaderFile::3129078029156017186::1698718641::1698718643::1::::<><>::
-Oceanography.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-TimeDependentSpectrum.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
+InitialSpectrum_Compute.glsl::RDShaderFile::3129078029156017186::1698718790::1698719002::1::::<><>::
+Oceanography.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
+TimeDependentSpectrum_Compute.glsl::RDShaderFile::6511161174990782584::1698721746::1698721747::1::::<><>::
 ::res://Ocean Renderer 2.0/Shaders/Additional Shaders/UPS/::1698627498
 BRDF.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 BSDF.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
@@ -105,8 +105,8 @@ RenderingUtils.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
 ShoreMap.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
 SpectrumParams.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
 SwellPreset.cs.txt::TextFile::-1::1698531552::0::1::::<><>::
-::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/Shaders/::1698624172
-BrunetonLighting.hlsl.txt::TextFile::-1::1698531552::0::1::::<><>::
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/Shaders/::1698720100
+BrunetonLighting.hlsl.txt::TextFile::-1::1698720100::0::1::::<><>::
 GeoClipMap.hlsl.txt::TextFile::-1::1698560072::0::1::::<><>::
 Ocean.shader.txt::TextFile::-1::1698613715::0::1::::<><>::
 OceanDepthOnlyPass.hlsl.txt::TextFile::-1::1698624172::0::1::::<><>::
@@ -122,9 +122,9 @@ OceanVolume.hlsl.txt::TextFile::-1::1698559314::0::1::::<><>::
 FullscreenVert.hlsl.txt::TextFile::-1::1698531552::0::1::::<><>::
 StereographicSky.shader.txt::TextFile::-1::1698531553::0::1::::<><>::
 UnderwaterEffect.shader.txt::TextFile::-1::1698531553::0::1::::<><>::
-::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/Shaders/Additional Shaders/Compute Shaders/::1698695926
+::res://Ocean Renderer - Jump Trajectory/Gas Giant GitHub Projects/Gas Giant GitHub Projects/Ocean URP/Shaders/Additional Shaders/Compute Shaders/::1698719665
 FFT.compute.txt::TextFile::-1::1698624172::0::1::::<><>::
-FoamSimulation.compute.txt::TextFile::-1::1698531553::0::1::::<><>::
+FoamSimulation.compute.txt::TextFile::-1::1698719665::0::1::::<><>::
 GPURandom.hlsl.txt::TextFile::-1::1698531553::0::1::::<><>::
 InitialSpectrum.compute.txt::TextFile::-1::1698695926::0::1::::<><>::
 Oceanography.hlsl.txt::TextFile::-1::1698624172::0::1::::<><>::
@@ -166,6 +166,6 @@ core.hlsl.txt::TextFile::-1::1698614774::0::1::::<><>::
 DeclareDepthTexture.hlsl.txt::TextFile::-1::1698562252::0::1::::<><>::
 Lighting.hlsl.txt::TextFile::-1::1698562260::0::1::::<><>::
 SphericalHarmonics.hlsl.txt::TextFile::-1::1698565175::0::1::::<><>::
-::res://Scenes/::1698627459
-main.tscn::PackedScene::1068344028316138845::1698627459::0::1::::<><>::
+::res://Scenes/::1698720882
+main.tscn::PackedScene::1068344028316138845::1698720882::0::1::::<><>::
 ::res://Scenes/Example Scenes/::1698531917
