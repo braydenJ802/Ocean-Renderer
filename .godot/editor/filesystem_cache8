@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698720814
+::res://::1698811977
 README.md::TextFile::-1::1698627484::0::1::::<><>::
 ::res://Extra References/::1698621865
 ::res://Ocean Renderer 1.0/::1698641199
@@ -21,36 +21,36 @@ Ocean.txt::TextFile::-1::1698641199::0::1::::<><>::
 ::res://Ocean Renderer 2.0/Scripts/::1698531786
 ::res://Ocean Renderer 2.0/Scripts/External Scripts/::1698531773
 ::res://Ocean Renderer 2.0/Scripts/Runtime/::1698531786
-::res://Ocean Renderer 2.0/Shaders/::1698720883
-BrunetonLighting.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
-GeoClipMap.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
-Ocean.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
-OceanFoam.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
-OceanGlobals.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
-OceanGradient.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
-OceanMaterialProps.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
-OceanShoreMap.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
-OceanSimulationSampling.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
-OceanSurface.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
-OceanVolume.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
-::res://Ocean Renderer 2.0/Shaders/Additional Shaders/::1698627498
-GodotToUnitySH9.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
+::res://Ocean Renderer 2.0/Shaders/::1698723187
+BrunetonLighting.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+GeoClipMap.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+Ocean.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+OceanFoam.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+OceanGlobals.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+OceanGradient.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+OceanMaterialProps.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+OceanShoreMap.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+OceanSimulationSampling.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+OceanSurface.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+OceanVolume.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+::res://Ocean Renderer 2.0/Shaders/Additional Shaders/::1698723187
+GodotToUnitySH9.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
 MathExtensions.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-::res://Ocean Renderer 2.0/Shaders/Additional Shaders/Compute Shaders/::1698721747
-FFT_Compute.glsl::RDShaderFile::2452596869591837593::1698707701::1698707672::1::::<><>::
+::res://Ocean Renderer 2.0/Shaders/Additional Shaders/Compute Shaders/::1698723187
+FFT_Compute.glsl::RDShaderFile::2452596869591837593::1698722617::1698722626::1::::<><>::
 FoamSimulation_Compute.glsl::RDShaderFile::3645172180010551373::1698705900::1698705902::1::::<><>::
 GPURandom.glsl::RDShaderFile::6779107089425147307::1698711509::1698711502::1::::<><>::
-InitialSpectrum_Compute.glsl::RDShaderFile::3129078029156017186::1698718790::1698719002::1::::<><>::
-Oceanography.gdshaderinc::ShaderInclude::-1::1698720883::0::1::::<><>::
-TimeDependentSpectrum_Compute.glsl::RDShaderFile::6511161174990782584::1698722108::1698722110::1::::<><>::
-::res://Ocean Renderer 2.0/Shaders/Additional Shaders/UPS/::1698627498
+InitialSpectrum_Compute.glsl::RDShaderFile::3129078029156017186::1698722521::1698722626::1::::<><>::
+Oceanography.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+TimeDependentSpectrum_Compute.glsl::RDShaderFile::6511161174990782584::1698722513::1698722626::1::::<><>::
+::res://Ocean Renderer 2.0/Shaders/Additional Shaders/UPS/::1698723187
 BRDF.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 BSDF.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 CommonMaterial.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 core.gdshaderinc::ShaderInclude::-1::1698618600::0::1::::<><>::
 DeclareDepthTexture.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 Lighting.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-SphericalHarmonics.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
+SphericalHarmonics.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
 ::res://Ocean Renderer 2.0/Textures for Shaders/::1698643051
 ContactFoam.png::CompressedTexture2D::5923264041787618559::1698532050::1698643051::1::::<><>::
 ContactFoam_1.png::CompressedTexture2D::6442815384581217187::1698532050::1698643051::1::::<><>::
@@ -166,6 +166,6 @@ core.hlsl.txt::TextFile::-1::1698614774::0::1::::<><>::
 DeclareDepthTexture.hlsl.txt::TextFile::-1::1698562252::0::1::::<><>::
 Lighting.hlsl.txt::TextFile::-1::1698562260::0::1::::<><>::
 SphericalHarmonics.hlsl.txt::TextFile::-1::1698565175::0::1::::<><>::
-::res://Scenes/::1698720882
-main.tscn::PackedScene::1068344028316138845::1698720882::0::1::::<><>::
+::res://Scenes/::1698723123
+main.tscn::PackedScene::1068344028316138845::1698723123::0::1::::<><>::
 ::res://Scenes/Example Scenes/::1698531917

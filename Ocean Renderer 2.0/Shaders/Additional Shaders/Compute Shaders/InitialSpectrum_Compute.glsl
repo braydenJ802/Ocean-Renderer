@@ -1,7 +1,7 @@
 #[compute]
 #version 450
 
-const float PI = 3.141592653589793238462643383279502884197;
+const float PI = 3.14159265358979323846264338327950288419716939937510;
 
 layout(binding = 0, rgba32f) uniform image2D H0;
 layout(binding = 1, rgba32f) uniform image2D WavesData;

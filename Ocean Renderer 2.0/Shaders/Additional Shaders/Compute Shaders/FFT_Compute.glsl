@@ -43,7 +43,7 @@ vec2 ComplexMult(vec2 a, vec2 b) {
 }
 
 void ButterflyValues(uint step, uint index, out uvec2 indices, out vec2 twiddle) {
-    const float twoPi = 6.28318530718;
+    const float twoPi = 6.283185307179586476925286766559005768394338798750;
     uint b = Size >> (step + 1);
     uint w = b * (index / b);
     uint i = (w + index) % Size;

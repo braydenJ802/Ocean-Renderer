@@ -11,3 +11,5 @@ res://Ocean Renderer 2.0/Shaders/Ocean.gdshaderinc
 res://Ocean Renderer 2.0/Shaders/OceanShoreMap.gdshaderinc
 res://Ocean Renderer 2.0/Shaders/OceanVolume.gdshaderinc
 res://Ocean Renderer 2.0/Shaders/OceanSurface.gdshaderinc
+res://Ocean Renderer 2.0/Shaders/Additional Shaders/GodotToUnitySH9.gdshaderinc
+res://Ocean Renderer 2.0/Shaders/Additional Shaders/UPS/SphericalHarmonics.gdshaderinc
