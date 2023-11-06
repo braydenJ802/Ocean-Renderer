@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://cc4s8jhgy5u3i"
+path="res://.godot/imported/FFTHorizontal.glsl-32cc16a5b6427d9550df04037ef89046.res"
+
+[deps]
+
+source_file="res://Samuel-OceanFFT/addons/rakkt.oceanfft/shaders/FFTHorizontal.glsl"
+dest_files=["res://.godot/imported/FFTHorizontal.glsl-32cc16a5b6427d9550df04037ef89046.res"]
+
+[params]
+

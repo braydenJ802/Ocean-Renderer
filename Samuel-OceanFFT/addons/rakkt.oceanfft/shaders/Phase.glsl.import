@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://2bgdnitk3d1m"
+path="res://.godot/imported/Phase.glsl-fb684f4ac6fb418527aa36e9de236a4e.res"
+
+[deps]
+
+source_file="res://Samuel-OceanFFT/addons/rakkt.oceanfft/shaders/Phase.glsl"
+dest_files=["res://.godot/imported/Phase.glsl-fb684f4ac6fb418527aa36e9de236a4e.res"]
+
+[params]
+

@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698811977
+::res://::1699236259
 README.md::TextFile::-1::1698627484::0::1::::<><>::
 ::res://Extra References/::1698621865
 ::res://Ocean Renderer 1.0/::1698641199
@@ -21,36 +21,36 @@ Ocean.txt::TextFile::-1::1698641199::0::1::::<><>::
 ::res://Ocean Renderer 2.0/Scripts/::1698531786
 ::res://Ocean Renderer 2.0/Scripts/External Scripts/::1698531773
 ::res://Ocean Renderer 2.0/Scripts/Runtime/::1698531786
-::res://Ocean Renderer 2.0/Shaders/::1698723187
-BrunetonLighting.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
-GeoClipMap.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
-Ocean.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
-OceanFoam.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
-OceanGlobals.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
-OceanGradient.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
-OceanMaterialProps.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
-OceanShoreMap.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
-OceanSimulationSampling.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
-OceanSurface.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
-OceanVolume.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
-::res://Ocean Renderer 2.0/Shaders/Additional Shaders/::1698723187
-GodotToUnitySH9.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+::res://Ocean Renderer 2.0/Shaders/::1698885121
+BrunetonLighting.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
+GeoClipMap.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
+Ocean.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
+OceanFoam.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
+OceanGlobals.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
+OceanGradient.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
+OceanMaterialProps.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
+OceanShoreMap.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
+OceanSimulationSampling.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
+OceanSurface.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
+OceanVolume.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
+::res://Ocean Renderer 2.0/Shaders/Additional Shaders/::1698885121
+GodotToUnitySH9.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
 MathExtensions.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-::res://Ocean Renderer 2.0/Shaders/Additional Shaders/Compute Shaders/::1698723187
+::res://Ocean Renderer 2.0/Shaders/Additional Shaders/Compute Shaders/::1698885121
 FFT_Compute.glsl::RDShaderFile::2452596869591837593::1698722617::1698722626::1::::<><>::
 FoamSimulation_Compute.glsl::RDShaderFile::3645172180010551373::1698705900::1698705902::1::::<><>::
 GPURandom.glsl::RDShaderFile::6779107089425147307::1698711509::1698711502::1::::<><>::
 InitialSpectrum_Compute.glsl::RDShaderFile::3129078029156017186::1698722521::1698722626::1::::<><>::
-Oceanography.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+Oceanography.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
 TimeDependentSpectrum_Compute.glsl::RDShaderFile::6511161174990782584::1698722513::1698722626::1::::<><>::
-::res://Ocean Renderer 2.0/Shaders/Additional Shaders/UPS/::1698723187
+::res://Ocean Renderer 2.0/Shaders/Additional Shaders/UPS/::1698885121
 BRDF.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 BSDF.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 CommonMaterial.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 core.gdshaderinc::ShaderInclude::-1::1698618600::0::1::::<><>::
 DeclareDepthTexture.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
 Lighting.gdshaderinc::ShaderInclude::-1::1698627498::0::1::::<><>::
-SphericalHarmonics.gdshaderinc::ShaderInclude::-1::1698723187::0::1::::<><>::
+SphericalHarmonics.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
 ::res://Ocean Renderer 2.0/Textures for Shaders/::1698643051
 ContactFoam.png::CompressedTexture2D::5923264041787618559::1698532050::1698643051::1::::<><>::
 ContactFoam_1.png::CompressedTexture2D::6442815384581217187::1698532050::1698643051::1::::<><>::
@@ -166,6 +166,49 @@ core.hlsl.txt::TextFile::-1::1698614774::0::1::::<><>::
 DeclareDepthTexture.hlsl.txt::TextFile::-1::1698562252::0::1::::<><>::
 Lighting.hlsl.txt::TextFile::-1::1698562260::0::1::::<><>::
 SphericalHarmonics.hlsl.txt::TextFile::-1::1698565175::0::1::::<><>::
+::res://Samuel-OceanFFT/::1698884991
+::res://Samuel-OceanFFT/addons/::1698884991
+::res://Samuel-OceanFFT/addons/rakkt.oceanfft/::1698884991
+LICENSE.txt::TextFile::-1::1698885038::0::1::::<><>::
+Ocean.tres::ShaderMaterial::5665548311052548309::1698884870::0::1::::<><>::res://addons/tessarakkt.oceanfft/shaders/SurfaceVisual.gdshader
+plugin.cfg::TextFile::-1::1698884870::0::1::::<><>::
+plugin.gd::GDScript::-1::1698884870::0::1::::<>EditorPlugin<>::
+::res://Samuel-OceanFFT/addons/rakkt.oceanfft/components/::1698884991
+BuoyancyBody3D.gd::GDScript::-1::1698884870::0::1::::BuoyancyBody3D<>RigidBody3D<>res://addons/tessarakkt.oceanfft/icons/BuoyancyBody3D.svg::
+BuoyancyProbe3D.gd::GDScript::-1::1698884870::0::1::::BuoyancyProbe3D<>Marker3D<>res://addons/tessarakkt.oceanfft/icons/BuoyancyProbe3D.svg::
+MotorVesselBody3D.gd::GDScript::-1::1698884870::0::1::::MotorVesselBody3D<>BuoyancyBody3D<>res://addons/tessarakkt.oceanfft/icons/MotorVesselBody3D.svg::
+Ocean3D.gd::GDScript::-1::1698884870::0::1::::Ocean3D<>Node3D<>res://addons/tessarakkt.oceanfft/icons/Ocean3D.svg::
+OceanEnvironment.gd::GDScript::-1::1698884870::0::1::::OceanEnvironment<>WorldEnvironment<>res://addons/tessarakkt.oceanfft/icons/OceanEnvironment.svg::
+QuadTree3D.gd::GDScript::-1::1698884870::0::1::::QuadTree3D<>Node3D<>res://addons/tessarakkt.oceanfft/icons/QuadTree3D.svg::
+QuadTree3D.tscn::PackedScene::4555820301421866008::1698884870::0::1::::<><>::res://addons/tessarakkt.oceanfft/components/QuadTree3D.gd
+::res://Samuel-OceanFFT/addons/rakkt.oceanfft/graphics/::1698885065
+Splash.png::CompressedTexture2D::980957028552267207::1698884870::1698885065::1::::<><>::
+::res://Samuel-OceanFFT/addons/rakkt.oceanfft/icons/::1698885065
+BuoyancyBody3D.svg::CompressedTexture2D::3299015797280243465::1698884870::1698885065::1::::<><>::
+BuoyancyProbe3D.svg::CompressedTexture2D::8981622693549261861::1698884870::1698885065::1::::<><>::
+MotorVesselBody3D.svg::CompressedTexture2D::3257571376153012751::1698884870::1698885065::1::::<><>::
+Ocean3D.svg::CompressedTexture2D::4380805951202796246::1698884871::1698885065::1::::<><>::
+OceanEnvironment.svg::CompressedTexture2D::5666063663406745102::1698884871::1698885065::1::::<><>::
+QuadTree3D.svg::CompressedTexture2D::460823265855029111::1698884871::1698885065::1::::<><>::
+SailVesselBody3D.svg::CompressedTexture2D::4559080826714995427::1698884871::1698885065::1::::<><>::
+::res://Samuel-OceanFFT/addons/rakkt.oceanfft/shaders/::1698885121
+FFTHorizontal.glsl::RDShaderFile::4974238330428328320::1698884871::1698885065::1::::<><>::
+FFTVertical.glsl::RDShaderFile::2071415999332359759::1698884871::1698885065::1::::<><>::
+InitialSpectrum.glsl::RDShaderFile::1266405008069190170::1698884871::1698885065::1::::<><>::
+OceanCommon.gdshaderinc::ShaderInclude::-1::1698885121::0::1::::<><>::
+Phase.glsl::RDShaderFile::1897533511358976108::1698884871::1698885065::1::::<><>::
+Spectrum.glsl::RDShaderFile::8178933275925932690::1698884871::1698885065::1::::<><>::
+SplashParticles.gdshader::Shader::-1::1698885121::0::1::::<><>::
+SurfaceVisual.gdshader::Shader::-1::1698885121::0::1::::<><>::
+UnderwaterParticles.gdshader::Shader::-1::1698885121::0::1::::<><>::
+::res://Samuel-OceanFFT/example/::1699236207
+Camera.gd::GDScript::-1::1698884871::0::1::::<>Camera3D<>::
+Environment.tres::Environment::8394293145444231284::1698884871::0::1::::<><>::uid://bkit8sp8tu1c
+Example.tscn::PackedScene::3704977306941148795::1698884871::0::1::::<><>::uid://drui1tvkk7b7q
+FloatingRectangle.tscn::PackedScene::1218265291441177880::1698884871::0::1::::<><>::res://addons/tessarakkt.oceanfft/components/BuoyancyBody3D.gd<>res://addons/tessarakkt.oceanfft/components/BuoyancyProbe3D.gd
+MotorRectangle.tscn::PackedScene::2466010168650675117::1698884871::0::1::::<><>::res://addons/tessarakkt.oceanfft/components/MotorVesselBody3D.gd<>res://addons/tessarakkt.oceanfft/components/BuoyancyProbe3D.gd
+OceanUI.gd::GDScript::-1::1698884871::0::1::::<>CanvasLayer<>::
+sky_source.txt::TextFile::-1::1698884872::0::1::::<><>::
 ::res://Scenes/::1698723123
 main.tscn::PackedScene::1068344028316138845::1698723123::0::1::::<><>::
 ::res://Scenes/Example Scenes/::1698531917

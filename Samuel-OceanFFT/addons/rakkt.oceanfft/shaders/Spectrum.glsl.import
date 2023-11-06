@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://dor63or8bt32e"
+path="res://.godot/imported/Spectrum.glsl-54b809d5a1f2818584d4405056acaa52.res"
+
+[deps]
+
+source_file="res://Samuel-OceanFFT/addons/rakkt.oceanfft/shaders/Spectrum.glsl"
+dest_files=["res://.godot/imported/Spectrum.glsl-54b809d5a1f2818584d4405056acaa52.res"]
+
+[params]
+
